@@ -8,7 +8,11 @@ def main():
               "3. View Productivity Report\n"
               "4. Exit\n")
 
-        choice = int(input("Enter your choice: "))
+        try:
+            choice = int(input("Enter your choice: "))
+        except ValueError:
+            print("\nError: Enter a number")
+            continue
 
         if choice == 1:
             emp_id = input("Employee ID: ")
@@ -24,6 +28,7 @@ def main():
                 emp_tasks_completed = int(input("Tasks Completed: "))
             except ValueError:
                 print("\nError: Hours Worked must be an number and tasks an integer")
+                continue
 
             auth = input("\nWrite 'continue' to add employee: ").strip().lower()
             if auth == "continue":
@@ -49,6 +54,32 @@ def main():
                 print(
                 f"{emp_id:<7} | {info['name']:<19} | {info['role']:<19} | {info['hours_worked']:<5} | {info['tasks_completed']}")
         elif choice == 3:
-            pass
+            if not employees:
+                print("\nError: No employees found in the database")
+                continue
+
+            print("\nProductivity Report (Tasks per Hour):")
+            print("ID      | Name                | Ratio    | Status")
+            print("-" * 55)
+            for emp_id, info in employees.items():
+                hours = info["hours_worked"]
+                tasks = info["tasks_completed"]
+
+                if hours <= 0:
+                    ratio = 0.0
+                    status = "No hours logged"
+                else:
+                    ratio = tasks / hours
+                    if ratio >= 2.0:
+                        status = "High"
+                    elif ratio >= 1.0:
+                        status = "Moderate"
+                    else:
+                        status = "Low"
+
+                print(f"{emp_id:<7} | {info['name']:<19} | {ratio:<8.2f} | {status}")
+        elif choice == 4:
+            break
+
 if __name__ == "__main__":
     main()
