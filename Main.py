@@ -21,28 +21,33 @@ def main():
 
             try:
                 emp_hours_worked = float(input("Hours Worked: "))
-                emp_tasks_completed = int(input("Tasts Completed: "))
+                emp_tasks_completed = int(input("Tasks Completed: "))
             except ValueError:
-                print("Error: Hours Worked must be an number and tasks an integer")
+                print("\nError: Hours Worked must be an number and tasks an integer")
 
-            employees[emp_id] = {
-                "name": emp_name,
-                "role": emp_role,
-                "hours_worked": emp_hours_worked,
-                "tasks_completed": emp_tasks_completed
-            }
+            auth = input("write 'continue' to add employee: ").strip().lower()
+            if auth == "continue":
+                employees[emp_id] = {
+                    "name": emp_name,
+                    "role": emp_role,
+                    "hours_worked": emp_hours_worked,
+                    "tasks_completed": emp_tasks_completed
+                }
+            else:
+                print("\nAction Cancelled. Employee not added.")
+                continue
 
-            print(f"Employee '{emp_name}' added successfully.")
+            print(f"\nEmployee '{emp_name}' added successfully.")
 
         elif choice == 2:
             if not employees:
                 print("\nError: No employees found in the database")
                 continue
 
-        print("\nID      | Name                | Role                | Hours | Tasks")
-        print("-" * 65)
-        for emp_id, info in employees.items():
-            print(
+            print("\nID      | Name                | Role                | Hours | Tasks")
+            print("-" * 65)
+            for emp_id, info in employees.items():
+                print(
                 f"{emp_id:<7} | {info['name']:<19} | {info['role']:<19} | {info['hours_worked']:<5} | {info['tasks_completed']}")
 
 if __name__ == "__main__":
