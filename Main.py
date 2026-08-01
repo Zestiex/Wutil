@@ -2,7 +2,7 @@ def main():
     employees = {}
 
     while True:
-        print("\n--- Employee Management System ---\n"
+        print("\n--- Simple Employee Management System ---\n"
               "1. Add Employee\n"
               "2. View All Employees\n"
               "3. View Productivity Report\n"
@@ -25,7 +25,7 @@ def main():
             except ValueError:
                 print("\nError: Hours Worked must be an number and tasks an integer")
 
-            auth = input("write 'continue' to add employee: ").strip().lower()
+            auth = input("\nWrite 'continue' to add employee: ").strip().lower()
             if auth == "continue":
                 employees[emp_id] = {
                     "name": emp_name,
@@ -38,7 +38,6 @@ def main():
                 continue
 
             print(f"\nEmployee '{emp_name}' added successfully.")
-
         elif choice == 2:
             if not employees:
                 print("\nError: No employees found in the database")
@@ -49,6 +48,7 @@ def main():
             for emp_id, info in employees.items():
                 print(
                 f"{emp_id:<7} | {info['name']:<19} | {info['role']:<19} | {info['hours_worked']:<5} | {info['tasks_completed']}")
-
+        elif choice == 3:
+            pass
 if __name__ == "__main__":
     main()
