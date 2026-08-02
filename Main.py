@@ -6,6 +6,17 @@ class Employee:
         self.hours_worked = hours_worked
         self.tasks_completed = tasks_completed
 
+    def positive_float(self, promt):
+        while True:
+            try:
+                val = float(input(promt))
+                if val < 0:
+                    print("\nError: Amount cannot be negative.")
+                    continue
+                return val
+            except ValueError:
+                print("\nError: Pleace enter a valid number.")
+
     def raw_productivity(self):
         if self.hours_worked <= 0:
             return 0.0
@@ -119,26 +130,17 @@ class Employee:
                 hchoice = input("\nChoice: ")
 
                 if hchoice == "1":
-                    added_hours = float(input("Amount: "))
-                    if added_hours <= 0:
-                        print("\nError: Amount cannot be negative.")
-                    else:
-                        target_emp.hours_worked += added_hours
-                        print(f"\nSuccessfully Added {added_hours} hours to worker {target_emp.id}")
+                    self.positive_float("Amount: ")
+                    target_emp.hours_worked += val
+                    print(f"\nSuccessfully Added {val} hours to worker {target_emp.id}")
                 elif hchoice == "2":
-                    removed_hours = float(input("Amount: "))
-                    if removed_hours <= 0:
-                        print("\nError: Amount cannot be negative.")
-                    else:
-                        target_emp.hours_worked -= removed_hours
-                        print(f"\nSuccessfully removed {added_hours} hours from worker {target_emp.id}")
+                    self.positive_float("Amount: ")
+                    target_emp.hours_worked -= val
+                    print(f"\nSuccessfully removed {val} hours from worker {target_emp.id}")
                 elif hchoice == "3":
-                    set_hours_worked = float(input("Amount: "))
-                    if removed_hours <= 0:
-                        print("\nError: Amount cannot be negative.")
-                    else:
-                        target_emp.hours_worked = set_hours_worked
-                        print(f"\nSuccessfully set {added_hours} hours to worker {target_emp.id}")
+                    self.positive_float("Amount: ")
+                    target_emp.hours_worked = val
+                    print(f"\nSuccessfully set {val} hours to worker {target_emp.id}")
 
             elif choice == "2":
                 print(f"\nEditing data for: {target_emp.name} ({target_emp.id})"
@@ -150,7 +152,7 @@ class Employee:
                 tchoice = input("\nChoice: ")
 
                 if tchoice == "1":
-                    added_ = float(input("Amount: "))
+                    added_hours = float(input("Amount: "))
                     if added_hours <= 0:
                         print("\nError: Amount cannot be negative.")
                     else:
@@ -162,11 +164,13 @@ class Employee:
                         print("\nError: Amount cannot be negative.")
                     else:
                         target_emp.hours_worked -= removed_hours
-                        print(f"\nSuccessfully removed {added_hours} hours from worker {target_emp.id}")
+                        print(f"\nSuccessfully removed {removed_hours} hours from worker {target_emp.id}")
                 elif tchoice == "3":
                     set_hours_worked = float(input("Amount: "))
-                    if removed_hours <= 0:
+                    if set_hours_worked <= 0:
                         print("\nError: Amount cannot be negative.")
                     else:
                         target_emp.hours_worked = set_hours_worked
-                        print(f"\nSuccessfully set {added_hours} hours to worker {target_emp.id}")
+                        print(f"\nSuccessfully set {set_hours_worked} hours to worker {target_emp.id}")
+        except ValueError:
+            print("\nError: Invalid input.")
