@@ -82,3 +82,91 @@ class Employee:
                 f"{hours_str:<{hours_w}} | "
                 f"{emp.tasks_completed:<{tasks_w}}"
             )
+
+    def update_info(self, employees_list):
+        if not employees_list:
+            print("\nNo employees to update info for.")
+            return
+
+        id = input("\nEmployee ID: ")
+
+        target_emp = None
+        for emp in employees_list:
+            if str(emp.id) == id:
+                target_emp = emp
+                break
+        if not target_emp:
+            print(f"\nError: Employee with ID '{id}' not found.")
+            return
+
+        print(f"\nEditing data for: {target_emp.name} ({target_emp.id})"
+              "\n1. Update Hours Worked"
+              "\n2. Update Tasks Completed"
+              "\n3. Update Role"
+              "\n4. Remove employee"
+              )
+
+        choice = input("\nChoice: ")
+
+        try:
+            if choice == "1":
+                print(f"\nEditing data for: {target_emp.name} ({target_emp.id})"
+                     "\n1. Add amount of Hours"
+                     "\n2. Remove amount of Hours"
+                     "\n3. Set amount of Hours"
+                      )
+
+                hchoice = input("\nChoice: ")
+
+                if hchoice == "1":
+                    added_hours = float(input("Amount: "))
+                    if added_hours <= 0:
+                        print("\nError: Amount cannot be negative.")
+                    else:
+                        target_emp.hours_worked += added_hours
+                        print(f"\nSuccessfully Added {added_hours} hours to worker {target_emp.id}")
+                elif hchoice == "2":
+                    removed_hours = float(input("Amount: "))
+                    if removed_hours <= 0:
+                        print("\nError: Amount cannot be negative.")
+                    else:
+                        target_emp.hours_worked -= removed_hours
+                        print(f"\nSuccessfully removed {added_hours} hours from worker {target_emp.id}")
+                elif hchoice == "3":
+                    set_hours_worked = float(input("Amount: "))
+                    if removed_hours <= 0:
+                        print("\nError: Amount cannot be negative.")
+                    else:
+                        target_emp.hours_worked = set_hours_worked
+                        print(f"\nSuccessfully set {added_hours} hours to worker {target_emp.id}")
+
+            elif choice == "2":
+                print(f"\nEditing data for: {target_emp.name} ({target_emp.id})"
+                     "\n1. Add amount of Hours"
+                     "\n2. Remove amount of Hours"
+                     "\n3. Set amount of Hours"
+                    )
+
+                tchoice = input("\nChoice: ")
+
+                if tchoice == "1":
+                    added_ = float(input("Amount: "))
+                    if added_hours <= 0:
+                        print("\nError: Amount cannot be negative.")
+                    else:
+                        target_emp.hours_worked += added_hours
+                        print(f"\nSuccessfully Added {added_hours} hours to worker {target_emp.id}")
+                elif tchoice == "2":
+                    removed_hours = float(input("Amount: "))
+                    if removed_hours <= 0:
+                        print("\nError: Amount cannot be negative.")
+                    else:
+                        target_emp.hours_worked -= removed_hours
+                        print(f"\nSuccessfully removed {added_hours} hours from worker {target_emp.id}")
+                elif tchoice == "3":
+                    set_hours_worked = float(input("Amount: "))
+                    if removed_hours <= 0:
+                        print("\nError: Amount cannot be negative.")
+                    else:
+                        target_emp.hours_worked = set_hours_worked
+                        print(f"\nSuccessfully set {added_hours} hours to worker {target_emp.id}")
