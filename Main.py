@@ -1,3 +1,4 @@
+"""
 class Employee:
     def __init__(self, id, name, role, hours_worked, tasks_completed):
         self.id = id
@@ -174,3 +175,5 @@ class Employee:
                         print(f"\nSuccessfully set {set_hours_worked} hours to worker {target_emp.id}")
         except ValueError:
             print("\nError: Invalid input.")
+"""
+
