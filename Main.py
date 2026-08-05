@@ -176,18 +176,25 @@ class Employee:
         except ValueError:
             print("\nError: Invalid input.")
 """
-
+import string
 import sys
+import random
 
 employees = {}
 
-def new_employee():
-    worker_id = input("\nID: ")
+def id_generator(min, max):
+    while True:
+        emp_id = f"EMP-{random.randint(min, max)}"
+        if emp_id not in employees:
+            return worker_id
 
-    if not worker_id:
+def new_emp():
+    emp_id = input("\nID: ")
+
+    if not emp_id:
         print("\nError: ID cannot be empty.")
         return
-    elif worker_id in employees:
+    elif emp_id in employees:
         print("\nError: ID already exists.")
         return
 
@@ -231,8 +238,14 @@ def new_employee():
         else:
             print("\nError: Invalid input.")
 
-def list_employees():
-    print("\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
-    for w_id, employee in employees.items():
-        print(f"{w_id:<6}{employee['name']:<15}{employee['role']:<15}{employee['hours']:<8}{employee['tasks']:<6}")
+def edit_emp():
+    worker_id = input("\nID: ")
+    if not worker_id:
+        print("\nError: ID cannot be empty.")
+        return
 
+
+def list_emps():
+    print("\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
+    for w_id, emp in employees.items():
+        print(f"{w_id:<6}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
