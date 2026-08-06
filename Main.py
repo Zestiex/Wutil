@@ -4,21 +4,22 @@ import random
 
 employees = {}
 
-def id_generator(min, max):
+def id_generator():
+    min, max = 0, 999999999
     while True:
         emp_id = f"EMP-{random.randint(min, max)}" #-- generates an random string of nubmers from m
         if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
             return worker_id
 
 def new_emp():
-    emp_id = input("\nID: ")
-
-    if not emp_id: #-- Return "True" when "emp_id" is empty
-        print("\nError: ID cannot be empty.")
-        return
-    elif emp_id in employees: #-- Return "True" when "emp_id"
-       print("\nError: ID already exists.")
-       return
+    while True:
+        unauth = id_generator()
+        print(f"\nNewly Generated id: {unauth}\n")
+        if input("\n confirm? (y/n): ").strip().lower() in ("y", "yes"):
+            emp_id = unauth
+        else:
+            print("\nError: Action cancelled.")
+            break
 
     name = input("\nName: ")
     if not name:
