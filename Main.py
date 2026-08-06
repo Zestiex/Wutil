@@ -22,11 +22,11 @@ def new_emp():
             break
 
     name = input("\nName: ")
-    if not name:
+    if not name: #-- Return "True" when name is empty
         print("\nError: Name cannot be empty.")
         return
     role = input("\nRole: ")
-    if not role:
+    if not role: #-- Return "True" when role is empty
         print("\nError: Role cannot be empty.")
         return
 
