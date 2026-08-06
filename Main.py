@@ -6,19 +6,19 @@ employees = {}
 
 def id_generator(min, max):
     while True:
-        emp_id = f"EMP-{random.randint(min, max)}"
-        if emp_id not in employees:
+        emp_id = f"EMP-{random.randint(min, max)}" #-- generates an random string of nubmers from m
+        if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
             return worker_id
 
 def new_emp():
     emp_id = input("\nID: ")
 
-    if not emp_id:
+    if not emp_id: #-- Return "True" when "emp_id" is empty
         print("\nError: ID cannot be empty.")
         return
-    elif emp_id in employees:
-        print("\nError: ID already exists.")
-        return
+    elif emp_id in employees: #-- Return "True" when "emp_id"
+       print("\nError: ID already exists.")
+       return
 
     name = input("\nName: ")
     if not name:
@@ -56,23 +56,24 @@ def new_emp():
             break
         elif confirm == "n":
             print("\nEmployee creation cancelled.")
-            return
+            break
         else:
             print("\nError: Invalid input.")
+            continue
 
 def edit_emp():
-    for emp_id in employees:
+    for emp_id in employees: #-- prints all employees Ids and their name
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
 
     worker_id = input("\nID: ")
-    if not worker_id:
+    if not worker_id: #-- Returns "True" when "worker_id" is empty
         print("\nError: ID cannot be empty.")
         return
-    if worker_id not in employees:
+    if worker_id not in employees: #-- Returns "True" when "worker_id" not in employees dict
         print("\nError: ID Does not exist.")
         return
 
-    emp = employees[worker_id]
+    emp = employees[worker_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
 
     print("\nEmployee Details:\n"
         f"ID: {worker_id}\n"
@@ -93,28 +94,29 @@ def edit_emp():
         )
 
         select = input("").strip().lower()
-        if select == "1":
+        if select == "1": # -- Change name
             new_name = input("\nName: ").strip()
-            if not new_name:
+            if not new_name: #-- Return "True" when "new_name" is empty
                 print("\nError: Name cannot be empty.")
                 continue
 
             confirm = input("\nConfirm? (y/n): ").strip().lower()
-            if confirm in ("y", "yes"):
+            if confirm in ("y", "yes"): #-- Return "True" when confirm = y or confirm = yes but in more nice and easier to manage way
                 employees[worker_id]["name"] = new_name
                 print(f"\nEmployee {worker_id} name has been succsesfully changed to {new_name}.")
                 continue
             else:
                 print("\nError: Action cancelled.")
                 continue
-        elif select == "2":
+
+        elif select == "2": # -- Change role
             new_role = input("\nRole: ").strip()
-            if not new_role:
+            if not new_role: #-- Return "True" when "new_role" is empty
                 print("\nError: Role cannot be empty.")
                 continue
 
             confirm = input("\nConfirm? (y/n): ").strip().lower()
-            if confirm in ("y", "yes"):
+            if confirm in ("y", "yes"): #-- Return "True" when confirm = y or confirm = yes but in more nice and easier to manage way
                 employees[worker_id]["role"] = new_role
                 print(f"\nEmployee {worker_id} role has been succsesfully changed to {new_role}.")
                 continue
@@ -122,11 +124,35 @@ def edit_emp():
                 print("\nError: Action cancelled.")
                 continue
 
-        elif select == "3":
+        elif select == "3": #-- change emp hours
+            while True:
+                emp = employees[worker_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
+
+                print(
+                    "\nSelect an option\n"
+                    "1. Add hours\n"
+                    "2. Substract hours\n"
+                    "3. set hours\n"
+                    "e. exit\n"
+                )
+
+                choice = input("").strip().lower()
+                if choice == "1": #-- Add hours
+                    pass
+                elif choice == "2": #-- Substract hours
+                    pass
+                elif choice == "3": #-- Set hours
+                    pass
+                elif choice == "e": #-- exit
+                    break
+                else:
+                    print("\nError: invalid input.")
+            continue
+
+        elif select == "4": #-- change emp tasks
             pass
-        elif select == "4":
-            pass
-        elif select == "e":
+
+        elif select == "e": # -- exit
             print("\nEmployee Details:\n"
                   f"ID: {worker_id}\n"
                   f"Name: {emp['name']}\n"
@@ -135,11 +161,12 @@ def edit_emp():
                   f"Tasks: {emp['tasks_str']}\n"
                   )
             break
+
         else:
             print("\nError: Invalid input.")
             continue
 
 def list_emps():
     print(f"\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
-    for w_id, emp in employees.items():
+    for w_id, emp in employees.items(): #-- prints employees in nice way.
         print(f"{w_id:<6}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
