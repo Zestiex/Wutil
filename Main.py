@@ -24,7 +24,6 @@ def new_emp():
     if not name:
         print("\nError: Name cannot be empty.")
         return
-
     role = input("\nRole: ")
     if not role:
         print("\nError: Role cannot be empty.")
@@ -65,9 +64,44 @@ def edit_emp():
     if not worker_id:
         print("\nError: ID cannot be empty.")
         return
+    if worker_id not in employees:
+        print("\nError: ID Does not exist.")
+        return
 
+    print("\nEmployee Details:")
+    print(f"ID: {worker_id}\n"
+          f"Name: {name}\n"
+          f"Role: {role}\n"
+          f"Hours: {hours_str}\n"
+          f"Tasks: {tasks_str}")
+
+    while True:
+        try:
+            select = int(input(
+                        "\nSelect an option\n"
+                        "1. Change name\n"
+                        "2. Change role\n"
+                        "3. change hours\n"
+                        "4. change tasks"
+                    )).lower()
+        except ValueError:
+            print("\nError: Invalid input.")
+            return
+
+        if select == "1":
+            name = input("\nName: ")
+
+        elif select == "2":
+            pass
+        elif select == "3":
+            pass
+        elif select == "4":
+            pass
+        else:
+            print("\nError: Invalid input.")
+            return
 
 def list_emps():
-    print("\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
+    print(f"\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items():
         print(f"{w_id:<6}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
