@@ -65,12 +65,12 @@ def edit_emp():
     for emp_id in employees: #-- prints all employees Ids and their name
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
 
-    worker_id = input("\nID: ")
-    if not worker_id: #-- Returns "True" when "worker_id" is empty
-        print("\nError: ID cannot be empty.")
+    emp_id = (input("\nID: ")).strip()
+    if emp_id not in employees:
+        print("\nError: ID does not exist.")
         return
-    if worker_id not in employees: #-- Returns "True" when "worker_id" not in employees dict
-        print("\nError: ID Does not exist.")
+    elif not emp_id:
+        print("\nError: ID cannot be empty.")
         return
 
     emp = employees[worker_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
