@@ -99,18 +99,29 @@ def edit_emp():
                 print("\nError: Name cannot be empty.")
                 continue
 
-            employees[worker_id]["name"] = new_name
-            print(f"\nEmployee {worker_id} name has been succsesfully changed to {new_name}.")
-            continue
+            confirm = input("\nConfirm? (y/n): ").strip().lower()
+            if confirm in ("y", "yes"):
+                employees[worker_id]["name"] = new_name
+                print(f"\nEmployee {worker_id} name has been succsesfully changed to {new_name}.")
+                continue
+            else:
+                print("\nError: Action cancelled.")
+                continue
         elif select == "2":
-            new_role = input("\nRole: ")
+            new_role = input("\nRole: ").strip()
             if not new_role:
                 print("\nError: Role cannot be empty.")
                 continue
 
-            employees[worker_id]["role"] = new_role
-            print(f"\nEmployee {worker_id} role has been succsesfully changed to {new_role}.")
-            continue
+            confirm = input("\nConfirm? (y/n): ").strip().lower()
+            if confirm in ("y", "yes"):
+                employees[worker_id]["role"] = new_role
+                print(f"\nEmployee {worker_id} role has been succsesfully changed to {new_role}.")
+                continue
+            else:
+                print("\nError: Action cancelled.")
+                continue
+
         elif select == "3":
             pass
         elif select == "4":
