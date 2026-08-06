@@ -138,7 +138,13 @@ def edit_emp():
 
                 choice = input("").strip().lower()
                 if choice == "1": #-- Add hours
-                    pass
+                    amount = int(input("\nAmount: ")).strip()
+                    confirm = input("\nConfirm? (y/n): ").strip().lower()
+                    if confirm in ("y", "yes"): employees[worker_id]["hours"] = amount
+                    else:
+                        print("\nError: Action cancelled.")
+                        continue
+
                 elif choice == "2": #-- Substract hours
                     pass
                 elif choice == "3": #-- Set hours
