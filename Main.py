@@ -33,7 +33,7 @@ def new_emp():
     try:
         hours_str = int(input("\nHours: "))
         tasks_str = int(input("\nTasks: "))
-    except ValueError:
+    except ValueError: #-- except works here when user inputs a string instead of number in hours_str or tasks_str
         print("\nError: Invalid input.")
         return
 
