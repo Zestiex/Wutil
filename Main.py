@@ -208,6 +208,6 @@ def emp_edit(): #-- Editing information about an existing employee
                     continue
             continue
 def emp_list(): #-- List of all regestired employees
-    print(f"\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
+    print(f"\n{'ID':<15}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items(): #-- prints employees in nice way.
-        print(f"{w_id:<6}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
+        print(f"{emp['ID']:<15}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
