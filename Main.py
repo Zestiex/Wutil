@@ -140,21 +140,21 @@ def emp_edit(): #-- Editing information about an existing employee
 
                 choice = input("").strip().lower()
                 if choice == "1": #-- Add hours
-                    amount = int(input("\nAmount: ").strip())
+                    amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["hours"] += amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "2": #-- Substract hours
-                    amount = int(input("\nAmount: ").strip())
+                    amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["hours"] -= amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "3": #-- Set hours
-                    amount = int(input("\nAmount: ").strip())
+                    amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["hours"] = amount
                     else:
@@ -179,26 +179,21 @@ def emp_edit(): #-- Editing information about an existing employee
                 )
                 choice = input("").strip().lower()
                 if choice == "1":  # -- Add tasks
-                    try:
-                        amount = int(input("\nAmount: ").strip())
-                    except ValueError:
-                        print("\nError: Invaild input.")
-                        continue
-
+                    amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["tasks"] += amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "2": #-- Substract tasks
-                    amount = int(input("\nAmount: ").strip())
+                    amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["tasks"] -= amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "3": #-- Set tasks
-                    amount = int(input("\nAmount: ").strip())
+                    amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["tasks"] = amount
                     else:
