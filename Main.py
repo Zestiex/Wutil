@@ -2,6 +2,13 @@ import random
 
 employees = {}
 
+def get_int(prompt):
+    while True:
+        try:
+            return int(input(promt).strip())
+        except ValueError:
+            print("\nError: Invaild input.")
+
 def id_generator(): #-- ID generator
     min, max = 0, 999999999
     while True:
@@ -178,7 +185,12 @@ def edit_emp(): #-- Editing information about an existing employee
                 )
                 choice = input("").strip().lower()
                 if choice == "1":  # -- Add tasks
-                    amount = int(input("\nAmount: ").strip())
+                    try:
+                        amount = int(input("\nAmount: ").strip())
+                    except ValueError:
+                        print("\nError: Invaild input.")
+                        continue
+
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["tasks_str"] += amount
                     else:
