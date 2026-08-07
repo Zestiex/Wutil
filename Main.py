@@ -167,7 +167,15 @@ def edit_emp():
             continue
 
         elif select == "4": #-- change emp tasks
-            pass
+            emp = employees[worker_id]  # -- declares that "emp" is an employee with an specific Id, the same id that user selected
+
+            print(
+                "\nSelect an option\n"
+                "1. Add hours\n"
+                "2. Substract hours\n"
+                "3. set hours\n"
+                "e. exit\n"
+            )
 
         elif select == "e": # -- exit
             print("\nEmployee Details:\n"
