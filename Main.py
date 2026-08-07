@@ -160,6 +160,14 @@ def edit_emp():
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "e": #-- exit
+                    print("\nAction cancelled.")
+                    print("\nEmployee Details:\n"
+                          f"ID: {worker_id}\n"
+                          f"Name: {emp['name']}\n"
+                          f"Role: {emp['role']}\n"
+                          f"Hours: {emp['hours_str']}\n"
+                          f"Tasks: {emp['tasks_str']}\n"
+                          )
                     break
                 else:
                     print("\nError: invalid input.")
@@ -185,7 +193,6 @@ def edit_emp():
             else:
                 print("\nError: Action cancelled.")
                 continue
-
         elif choice == "2": #-- Substract tasks
             amount = int(input("\nAmount: ")).strip()
             confirm = input("\nConfirm? (y/n): ").strip().lower()
@@ -193,7 +200,15 @@ def edit_emp():
             else:
                 print("\nError: Action cancelled.")
                 continue
+        elif choice == "3": #-- Set tasks
+            amount = int(input("\nAmount: ")).strip()
+            confirm = input("\nConfirm? (y/n): ").strip().lower()
+            if confirm in ("y", "yes"): emp["tasks"] == amount
+            else:
+                print("\nError: Action cancelled.")
+                continue
         elif select == "e": # -- exit
+            print("\nAction cancelled.")
             print("\nEmployee Details:\n"
                   f"ID: {worker_id}\n"
                   f"Name: {emp['name']}\n"
@@ -202,7 +217,6 @@ def edit_emp():
                   f"Tasks: {emp['tasks_str']}\n"
                   )
             break
-
         else:
             print("\nError: Invalid input.")
             continue
