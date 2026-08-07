@@ -48,12 +48,7 @@ def emp_new(): #-- New employee creation
         print("\nError: Invalid input.")
         return
 
-    print("\nEmployee Details:")
-    print(f"ID: {emp_id}\n"
-          f"Name: {name}\n"
-          f"Role: {role}\n"
-          f"Hours: {hours_str}\n"
-          f"Tasks: {tasks_str}")
+    emp_details(employees[emp_id])
 
     while True:
         confirm = input("\nConfirm? (y/n): ").lower()
@@ -87,13 +82,7 @@ def emp_edit(): #-- Editing information about an existing employee
 
     emp = employees[emp_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
 
-    print("\nEmployee Details:\n"
-        f"ID: {emp_id}\n"
-        f"Name: {emp['name']}\n"
-        f"Role: {emp['role']}\n"
-        f"Hours: {emp['hours']}\n"
-        f"Tasks: {emp['tasks']}\n"
-    )
+    emp_details(employees[emp_id])
 
     while True:
         print(
@@ -168,13 +157,7 @@ def emp_edit(): #-- Editing information about an existing employee
                         continue
                 elif choice == "e": #-- exit
                     print("\nAction cancelled.")
-                    print("\nEmployee Details:\n"
-                          f"ID: {emp['ID']}\n"
-                          f"Name: {emp['name']}\n"
-                          f"Role: {emp['role']}\n"
-                          f"Hours: {emp['hours']}\n"
-                          f"Tasks: {emp['tasks']}\n"
-                          )
+                    emp_details(employees[emp_id])
                     break
                 else:
                     print("\nError: invalid input.")
@@ -218,13 +201,7 @@ def emp_edit(): #-- Editing information about an existing employee
                         continue
                 elif choice == "e": # -- exit
                     print("\nAction cancelled.")
-                    print("\nEmployee Details:\n"
-                        f"ID: {emp_id}\n"
-                        f"Name: {emp['name']}\n"
-                        f"Role: {emp['role']}\n"
-                        f"Hours: {emp['hours']}\n"
-                        f"Tasks: {emp['tasks']}\n"
-                        )
+                    emp_details(employees[emp_id])
                     break
                 else:
                     print("\nError: Invalid input.")
