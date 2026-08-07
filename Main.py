@@ -9,10 +9,10 @@ def emp_details(emp):
           f"Role: {emp[role]}\n"
           f"Hours: {emp[hours]}\n"
           f"Tasks: {emp[tasks]}")
-def get_int(prompt):
+def get_int():
     while True:
         try:
-            return int(input(promt).strip())
+            return int(input("\nAmount: ").strip())
         except ValueError:
             print("\nError: Invaild input.")
 def id_generator(): #-- ID generator
