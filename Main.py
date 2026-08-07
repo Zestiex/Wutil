@@ -2,20 +2,26 @@ import random
 
 employees = {}
 
+def emp_details(emp):
+    print("\nEmployee Details:")
+    print(f"ID: {emp[emp_id]}\n"
+          f"Name: {emp[name]}\n"
+          f"Role: {emp[role]}\n"
+          f"Hours: {emp[hours]}\n"
+          f"Tasks: {emp[tasks]}")
 def get_int(prompt):
     while True:
         try:
             return int(input(promt).strip())
         except ValueError:
             print("\nError: Invaild input.")
-
 def id_generator(): #-- ID generator
     min, max = 0, 999999999
     while True:
         emp_id = f"EMP-{random.randint(min, max)}" #-- generates an random string of nubmers from m
         if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
             return emp_id
-def new_emp(): #-- New employee creation
+def emp_new(): #-- New employee creation
     while True:
         unauth = id_generator()
         print(f"\nNewly Generated id: {unauth}\n")
@@ -51,7 +57,7 @@ def new_emp(): #-- New employee creation
 
     while True:
         confirm = input("\nConfirm? (y/n): ").lower()
-        if confirm == "y":
+        if confirm in ("y", "yes"):
             employees[emp_id] = {"ID" : emp_id,
                 "name" : name,
                 "role" : role,
@@ -60,13 +66,13 @@ def new_emp(): #-- New employee creation
             }
             print(f"\nEmployee {emp_id} has been added.")
             break
-        elif confirm == "n":
+        elif confirm in ("n", "no"):
             print("\nEmployee creation cancelled.")
             break
         else:
             print("\nError: Invalid input.")
             continue
-def edit_emp(): #-- Editing information about an existing employee
+def emp_edit(): #-- Editing information about an existing employee
     for emp_id in employees: #-- prints all employees Ids and their name
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
 
@@ -224,7 +230,7 @@ def edit_emp(): #-- Editing information about an existing employee
                     print("\nError: Invalid input.")
                     continue
             continue
-def list_emps(): #-- List of all regestired employees
+def emp_list(): #-- List of all regestired employees
     print(f"\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items(): #-- prints employees in nice way.
         print(f"{w_id:<6}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
