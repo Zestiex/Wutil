@@ -2,13 +2,18 @@ import random
 
 employees = {}
 
-def emp_details(emp):
+def emp_details(emp_id):
+    if emp_id not in employees:
+        print("\nError: ID does not exist.")
+        return
+
+    emp = employees[emp_id]
     print("\nEmployee Details:")
-    print(f"ID: {emp[emp_id]}\n"
-          f"Name: {emp[name]}\n"
-          f"Role: {emp[role]}\n"
-          f"Hours: {emp[hours]}\n"
-          f"Tasks: {emp[tasks]}")
+    print(f"ID: {emp['ID']}\n"
+          f"Name: {emp['name']}\n"
+          f"Role: {emp['role']}\n"
+          f"Hours: {emp['hours']}\n"
+          f"Tasks: {emp['tasks']}")
 def get_int():
     while True:
         try:
@@ -181,21 +186,21 @@ def emp_edit(): #-- Editing information about an existing employee
                         continue
 
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["tasks_str"] += amount
+                    if confirm in ("y", "yes"): emp["tasks"] += amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "2": #-- Substract tasks
                     amount = int(input("\nAmount: ").strip())
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["tasks_str"] -= amount
+                    if confirm in ("y", "yes"): emp["tasks"] -= amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "3": #-- Set tasks
                     amount = int(input("\nAmount: ").strip())
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["tasks_str"] = amount
+                    if confirm in ("y", "yes"): emp["tasks"] = amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
