@@ -64,11 +64,12 @@ def edit_emp(): #-- Editing information about an existing employee
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
 
     emp_id = (input("\nID: ")).strip()
-    if emp_id not in employees: #-- Return "True" when emp_id does not registred in employees
-        print("\nError: ID does not exist.")
-        return
-    elif not emp_id: #-- Return "True" when "emp_id" is empty
+
+    if not emp_id: #-- Return "True" when "emp_id" is empty
         print("\nError: ID cannot be empty.")
+        return
+    elif emp_id not in employees: #-- Return "True" when emp_id does not registred in employees
+        print("\nError: ID does not exist.")
         return
 
     emp = employees[emp_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
