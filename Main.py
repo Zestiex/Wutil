@@ -141,23 +141,29 @@ def edit_emp():
                 if choice == "1": #-- Add hours
                     amount = int(input("\nAmount: ")).strip()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): employees[worker_id]["hours"] += amount
+                    if confirm in ("y", "yes"): emp["hours"] += amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "2": #-- Substract hours
                     amount = int(input("\nAmount: ")).strip()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): employees[worker_id]["hours"] -= amount
+                    if confirm in ("y", "yes"): emp["hours"] -= amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "3": #-- Set hours
-                    pass
+                    amount = int(input("\nAmount: ")).strip()
+                    confirm = input("\nConfirm? (y/n): ").strip().lower()
+                    if confirm in ("y", "yes"): emp["hours"] == amount
+                    else:
+                        print("\nError: Action cancelled.")
+                        continue
                 elif choice == "e": #-- exit
                     break
                 else:
                     print("\nError: invalid input.")
+                    continue
             continue
 
         elif select == "4": #-- change emp tasks
