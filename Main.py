@@ -17,7 +17,7 @@ def new_emp(): #-- New employee creation
             break
         else:
             print("\nError: Action cancelled.")
-            break
+            return
 
     name = input("\nName: ")
     if not name: #-- Return "True" when name is empty
@@ -78,8 +78,8 @@ def edit_emp(): #-- Editing information about an existing employee
         f"ID: {emp_id}\n"
         f"Name: {emp['name']}\n"
         f"Role: {emp['role']}\n"
-        f"Hours: {emp['hours_str']}\n"
-        f"Tasks: {emp['tasks_str']}\n"
+        f"Hours: {emp['hours']}\n"
+        f"Tasks: {emp['tasks']}\n"
     )
 
     while True:
@@ -135,21 +135,21 @@ def edit_emp(): #-- Editing information about an existing employee
                 if choice == "1": #-- Add hours
                     amount = int(input("\nAmount: ").strip())
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["hours_str"] += amount
+                    if confirm in ("y", "yes"): emp["hours"] += amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "2": #-- Substract hours
                     amount = int(input("\nAmount: ")).strip()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["hours_str"] -= amount
+                    if confirm in ("y", "yes"): emp["hours"] -= amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "3": #-- Set hours
                     amount = int(input("\nAmount: ")).strip()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["hours_str"] = amount
+                    if confirm in ("y", "yes"): emp["hours"] = amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
@@ -159,8 +159,8 @@ def edit_emp(): #-- Editing information about an existing employee
                           f"ID: {emp['ID']}\n"
                           f"Name: {emp['name']}\n"
                           f"Role: {emp['role']}\n"
-                          f"Hours: {emp['hours_str']}\n"
-                          f"Tasks: {emp['tasks_str']}\n"
+                          f"Hours: {emp['hours']}\n"
+                          f"Tasks: {emp['tasks']}\n"
                           )
                     break
                 else:
@@ -203,8 +203,8 @@ def edit_emp(): #-- Editing information about an existing employee
                     f"ID: {emp_id}\n"
                     f"Name: {emp['name']}\n"
                     f"Role: {emp['role']}\n"
-                    f"Hours: {emp['hours_str']}\n"
-                    f"Tasks: {emp['tasks_str']}\n"
+                    f"Hours: {emp['hours']}\n"
+                    f"Tasks: {emp['tasks']}\n"
                     )
                 break
             else:
