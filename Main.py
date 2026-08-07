@@ -10,7 +10,6 @@ def id_generator():
         emp_id = f"EMP-{random.randint(min, max)}" #-- generates an random string of nubmers from m
         if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
             return worker_id
-
 def new_emp():
     while True:
         unauth = id_generator()
@@ -61,7 +60,6 @@ def new_emp():
         else:
             print("\nError: Invalid input.")
             continue
-
 def edit_emp():
     for emp_id in employees: #-- prints all employees Ids and their name
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
@@ -220,7 +218,6 @@ def edit_emp():
         else:
             print("\nError: Invalid input.")
             continue
-
 def list_emps():
     print(f"\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items(): #-- prints employees in nice way.
