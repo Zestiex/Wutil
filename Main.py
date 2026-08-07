@@ -7,7 +7,7 @@ def id_generator(): #-- ID generator
     while True:
         emp_id = f"EMP-{random.randint(min, max)}" #-- generates an random string of nubmers from m
         if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
-            return emp_id #--
+            return emp_id
 def new_emp(): #-- New employee creation
     while True:
         unauth = id_generator()
@@ -63,7 +63,7 @@ def edit_emp(): #-- Editing information about an existing employee
     for emp_id in employees: #-- prints all employees Ids and their name
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
 
-    emp_id = (input("\nID: ")).strip()
+    emp_id = input("\nID: ").strip()
 
     if not emp_id: #-- Return "True" when "emp_id" is empty
         print("\nError: ID cannot be empty.")
@@ -140,14 +140,14 @@ def edit_emp(): #-- Editing information about an existing employee
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "2": #-- Substract hours
-                    amount = int(input("\nAmount: ")).strip()
+                    amount = int(input("\nAmount: ").strip())
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["hours"] -= amount
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "3": #-- Set hours
-                    amount = int(input("\nAmount: ")).strip()
+                    amount = int(input("\nAmount: ").strip())
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"): emp["hours"] = amount
                     else:
@@ -177,21 +177,21 @@ def edit_emp(): #-- Editing information about an existing employee
             )
             choice = input("").strip().lower()
             if choice == "1":  # -- Add tasks
-                amount = int(input("\nAmount: ")).strip()
+                amount = int(input("\nAmount: ").strip())
                 confirm = input("\nConfirm? (y/n): ").strip().lower()
                 if confirm in ("y", "yes"): emp["tasks_str"] += amount
                 else:
                     print("\nError: Action cancelled.")
                     continue
             elif choice == "2": #-- Substract tasks
-                amount = int(input("\nAmount: ")).strip()
+                amount = int(input("\nAmount: ").strip())
                 confirm = input("\nConfirm? (y/n): ").strip().lower()
                 if confirm in ("y", "yes"): emp["tasks_str"] -= amount
                 else:
                     print("\nError: Action cancelled.")
                     continue
             elif choice == "3": #-- Set tasks
-                amount = int(input("\nAmount: ")).strip()
+                amount = int(input("\nAmount: ").strip())
                 confirm = input("\nConfirm? (y/n): ").strip().lower()
                 if confirm in ("y", "yes"): emp["tasks_str"] = amount
                 else:
