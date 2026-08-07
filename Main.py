@@ -171,11 +171,13 @@ def edit_emp():
 
             print(
                 "\nSelect an option\n"
-                "1. Add hours\n"
-                "2. Substract hours\n"
-                "3. set hours\n"
+                "1. Add tasks\n"
+                "2. Substract tasks\n"
+                "3. set tasks\n"
                 "e. exit\n"
             )
+
+
 
         elif select == "e": # -- exit
             print("\nEmployee Details:\n"
