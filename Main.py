@@ -6,7 +6,6 @@ def emp_details(emp_id):
     if emp_id not in employees:
         print("\nError: ID does not exist.")
         return
-
     emp = employees[emp_id]
     print("\nEmployee Details:")
     print(f"ID: {emp['ID']}\n"
@@ -75,9 +74,7 @@ def emp_new(): #-- New employee creation
 def emp_edit(): #-- Editing information about an existing employee
     for emp_id in employees: #-- prints all employees Ids and their name
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
-
     emp_id = input("\nID: ").strip()
-
     if not emp_id: #-- Return "True" when "emp_id" is empty
         print("\nError: ID cannot be empty.")
         return
@@ -86,7 +83,6 @@ def emp_edit(): #-- Editing information about an existing employee
         return
 
     emp = employees[emp_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
-
     emp_details(employees[emp_id])
 
     while True:
