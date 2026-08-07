@@ -168,48 +168,50 @@ def edit_emp(): #-- Editing information about an existing employee
                     continue
             continue
         elif select == "4": #-- change emp tasks
-            print(
-                "\nSelect an option\n"
-                "1. Add tasks\n"
-                "2. Substract tasks\n"
-                "3. set tasks\n"
-                "e. exit\n"
-            )
-            choice = input("").strip().lower()
-            if choice == "1":  # -- Add tasks
-                amount = int(input("\nAmount: ").strip())
-                confirm = input("\nConfirm? (y/n): ").strip().lower()
-                if confirm in ("y", "yes"): emp["tasks_str"] += amount
+            while True:
+                print(
+                    "\nSelect an option\n"
+                    "1. Add tasks\n"
+                    "2. Substract tasks\n"
+                    "3. set tasks\n"
+                    "e. exit\n"
+                )
+                choice = input("").strip().lower()
+                if choice == "1":  # -- Add tasks
+                    amount = int(input("\nAmount: ").strip())
+                    confirm = input("\nConfirm? (y/n): ").strip().lower()
+                    if confirm in ("y", "yes"): emp["tasks_str"] += amount
+                    else:
+                        print("\nError: Action cancelled.")
+                        continue
+                elif choice == "2": #-- Substract tasks
+                    amount = int(input("\nAmount: ").strip())
+                    confirm = input("\nConfirm? (y/n): ").strip().lower()
+                    if confirm in ("y", "yes"): emp["tasks_str"] -= amount
+                    else:
+                        print("\nError: Action cancelled.")
+                        continue
+                elif choice == "3": #-- Set tasks
+                    amount = int(input("\nAmount: ").strip())
+                    confirm = input("\nConfirm? (y/n): ").strip().lower()
+                    if confirm in ("y", "yes"): emp["tasks_str"] = amount
+                    else:
+                        print("\nError: Action cancelled.")
+                        continue
+                elif choice == "e": # -- exit
+                    print("\nAction cancelled.")
+                    print("\nEmployee Details:\n"
+                        f"ID: {emp_id}\n"
+                        f"Name: {emp['name']}\n"
+                        f"Role: {emp['role']}\n"
+                        f"Hours: {emp['hours']}\n"
+                        f"Tasks: {emp['tasks']}\n"
+                        )
+                    break
                 else:
-                    print("\nError: Action cancelled.")
+                    print("\nError: Invalid input.")
                     continue
-            elif choice == "2": #-- Substract tasks
-                amount = int(input("\nAmount: ").strip())
-                confirm = input("\nConfirm? (y/n): ").strip().lower()
-                if confirm in ("y", "yes"): emp["tasks_str"] -= amount
-                else:
-                    print("\nError: Action cancelled.")
-                    continue
-            elif choice == "3": #-- Set tasks
-                amount = int(input("\nAmount: ").strip())
-                confirm = input("\nConfirm? (y/n): ").strip().lower()
-                if confirm in ("y", "yes"): emp["tasks_str"] = amount
-                else:
-                    print("\nError: Action cancelled.")
-                    continue
-            elif select == "e": # -- exit
-                print("\nAction cancelled.")
-                print("\nEmployee Details:\n"
-                    f"ID: {emp_id}\n"
-                    f"Name: {emp['name']}\n"
-                    f"Role: {emp['role']}\n"
-                    f"Hours: {emp['hours']}\n"
-                    f"Tasks: {emp['tasks']}\n"
-                    )
-                break
-            else:
-                print("\nError: Invalid input.")
-                continue
+            continue
 def list_emps(): #-- List of all regestired employees
     print(f"\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items(): #-- prints employees in nice way.
