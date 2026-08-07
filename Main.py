@@ -1,16 +1,14 @@
-import string
-import sys
 import random
 
 employees = {}
 
-def id_generator():
+def id_generator(): #-- ID generator
     min, max = 0, 999999999
     while True:
         emp_id = f"EMP-{random.randint(min, max)}" #-- generates an random string of nubmers from m
         if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
-            return worker_id
-def new_emp():
+            return worker_id #--
+def new_emp(): #-- New employee creation
     while True:
         unauth = id_generator()
         print(f"\nNewly Generated id: {unauth}\n")
@@ -60,7 +58,7 @@ def new_emp():
         else:
             print("\nError: Invalid input.")
             continue
-def edit_emp():
+def edit_emp(): #-- Editing information about an existing employee
     for emp_id in employees: #-- prints all employees Ids and their name
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
 
@@ -218,7 +216,7 @@ def edit_emp():
         else:
             print("\nError: Invalid input.")
             continue
-def list_emps():
+def list_emps(): #-- List of all regestired employees
     print(f"\n{'ID':<6}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items(): #-- prints employees in nice way.
         print(f"{w_id:<6}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
