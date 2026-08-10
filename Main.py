@@ -24,6 +24,15 @@ def get_int():
                 return amount
         except ValueError:
             print("\nError: Invalid input.")
+def get_confirm():
+    confirm = input("\nConfirm? (y/n): ").strip().lower()
+    if confirm in ("y", "yes"):
+        return True
+    elif confirm in ("n", "no"):
+        return False
+    else:
+        print("\nError: Invalid input.")
+        return None
 def id_generator():
     min_val, max_val = 0, 999999999
     while True:
@@ -34,7 +43,7 @@ def emp_new():
     while True:
         unauth = id_generator()
         print(f"\nNewly Generated id: {unauth}\n")
-        if input("\n confirm? (y/n): ").strip().lower() in ("y", "yes"):
+        if get_confirm():
             emp_id = unauth
             break
         else:
@@ -54,8 +63,8 @@ def emp_new():
     tasks_int = get_int()
 
     while True:
-        confirm = input("\nConfirm? (y/n): ").lower().strip()
-        if confirm in ("y", "yes"):
+        confirm = get_confirm()
+        if confirm:
             employees[emp_id] = {"ID" : emp_id,
                 "name" : name,
                 "role" : role,
@@ -65,11 +74,10 @@ def emp_new():
             emp_details(emp_id)
             print(f"\nEmployee {emp_id} has been added.")
             break
-        elif confirm in ("n", "no"):
+        elif confirm is False:
             print("\nEmployee creation cancelled.")
             break
         else:
-            print("\nError: Invalid input.")
             continue
 def emp_edit():
     for emp_id in employees:
@@ -102,13 +110,15 @@ def emp_edit():
                 print("\nError: Name cannot be empty.")
                 continue
 
-            confirm = input("\nConfirm? (y/n): ").strip().lower()
-            if confirm in ("y", "yes"):
+            confirm = get_confirm()
+            if confirm:
                 emp["name"] = new_name
                 print(f"\nEmployee {emp_id} name has been successfully changed to {new_name}.")
                 continue
-            else:
+            elif confirm is False:
                 print("\nError: Action cancelled.")
+                continue
+            else:
                 continue
         elif select == "2":
             new_role = input("\nRole: ").strip()
@@ -116,20 +126,22 @@ def emp_edit():
                 print("\nError: Role cannot be empty.")
                 continue
 
-            confirm = input("\nConfirm? (y/n): ").strip().lower()
-            if confirm in ("y", "yes"):
+            confirm = get_confirm()
+            if confirm:
                 emp["role"] = new_role
                 print(f"\nEmployee {emp_id} role has been successfully changed to {new_role}.")
                 continue
-            else:
+            elif confirm is False:
                 print("\nError: Action cancelled.")
+                continue
+            else:
                 continue
         elif select == "3":
             while True:
                 print(
                     "\nSelect an option\n"
                     "1. Add hours\n"
-                    "2. Substract hours\n"
+                    "2. Subtract hours\n"
                     "3. set hours\n"
                     "e. exit\n"
                 )
@@ -137,96 +149,112 @@ def emp_edit():
                 choice = input("").strip().lower()
                 if choice == "1":
                     amount = get_int()
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         emp["hours"] += amount
                         print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
+                        continue
+                    else:
                         continue
                 elif choice == "2":
                     amount = get_int()
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         if amount > emp["hours"]:
                             emp["hours"] = 0
                             print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
                         else:
                             emp["hours"] -= amount
                             print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
+                        continue
+                    else:
                         continue
                 elif choice == "3":
                     amount = get_int()
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         emp["hours"] = amount
                         print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
                         continue
+                    else:
+                        continue
                 elif choice == "e":
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         print("\nExiting.")
                         emp_details(emp_id)
                         break
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
                         continue
+                    else:
+                        continue
                 else:
-                    print("\nError: invalid input.")
+                    print("\nError: Invalid input.")
                     continue
         elif select == "4":
             while True:
                 print(
                     "\nSelect an option\n"
                     "1. Add tasks\n"
-                    "2. Substract tasks\n"
+                    "2. Subtract tasks\n"
                     "3. set tasks\n"
                     "e. exit\n"
                 )
                 choice = input("").strip().lower()
                 if choice == "1":
                     amount = get_int()
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         emp["tasks"] += amount
                         print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
+                        continue
+                    else:
                         continue
                 elif choice == "2":
                     amount = get_int()
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         if amount > emp["tasks"]:
                             emp["tasks"] = 0
                             print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
                         else:
                             emp["tasks"] -= amount
                             print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
+                        continue
+                    else:
                         continue
                 elif choice == "3":
                     amount = get_int()
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         emp["tasks"] = amount
                         print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
                         continue
+                    else:
+                        continue
                 elif choice == "e":
-                    confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"):
+                    confirm = get_confirm()
+                    if confirm:
                         print("\nExiting.")
                         emp_details(emp_id)
                         break
-                    else:
+                    elif confirm is False:
                         print("\nError: Action cancelled.")
+                        continue
+                    else:
                         continue
                 else:
                     print("\nError: Invalid input.")
