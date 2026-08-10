@@ -16,23 +16,21 @@ def emp_details(emp_id):
 def get_int():
     while True:
         try:
-            while True:
-                amount = int(input("\nAmount: ").strip())
-                if amount < 0:
-                    print("\nError: Amount cannot be negative.")
-                    continue
-                else:
-                    return amount
-                    break
+            amount = int(input("\nAmount: ").strip())
+            if amount < 0:
+                print("\nError: Amount cannot be negative.")
+                continue
+            else:
+                return amount
         except ValueError:
-            print("\nError: Invaild input.")
-def id_generator(): #-- ID generator
+            print("\nError: Invalid input.")
+def id_generator():
     min_val, max_val = 0, 999999999
     while True:
-        emp_id = f"EMP-{random.randint(min_val, max_val)}" #-- generates an random string of nubmers from m
-        if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
+        emp_id = f"EMP-{random.randint(min_val, max_val)}"
+        if emp_id not in employees:
             return emp_id
-def emp_new(): #-- New employee creation
+def emp_new():
     while True:
         unauth = id_generator()
         print(f"\nNewly Generated id: {unauth}\n")
@@ -40,24 +38,20 @@ def emp_new(): #-- New employee creation
             emp_id = unauth
             break
         else:
-            print("\nError: Action cancelled.")
-            return
+            print("\nGenerating a new ID.")
+            continue
 
     name = input("\nName: ").strip()
-    if not name: #-- Return "True" when name is empty
+    if not name:
         print("\nError: Name cannot be empty.")
         return
     role = input("\nRole: ").strip()
-    if not role: #-- Return "True" when role is empty
+    if not role:
         print("\nError: Role cannot be empty.")
         return
 
-    try:
-        hours_int = int(input("\nHours: "))
-        tasks_int = int(input("\nTasks: "))
-    except ValueError: #-- except works here when user inputs a string instead of number in hours_int or tasks_int
-        print("\nError: Invalid input.")
-        return
+    hours_int = get_int()
+    tasks_int = get_int()
 
     while True:
         confirm = input("\nConfirm? (y/n): ").lower().strip()
@@ -77,18 +71,18 @@ def emp_new(): #-- New employee creation
         else:
             print("\nError: Invalid input.")
             continue
-def emp_edit(): #-- Editing information about an existing employee
-    for emp_id in employees: #-- prints all employees Ids and their name
+def emp_edit():
+    for emp_id in employees:
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
     emp_id = input("\nID: ").strip()
-    if not emp_id: #-- Return "True" when "emp_id" is empty
+    if not emp_id:
         print("\nError: ID cannot be empty.")
         return
-    elif emp_id not in employees: #-- Return "True" when emp_id does not registred in employees
+    elif emp_id not in employees:
         print("\nError: ID does not exist.")
         return
 
-    emp = employees[emp_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
+    emp = employees[emp_id]
     emp_details(emp_id)
 
     while True:
@@ -102,35 +96,35 @@ def emp_edit(): #-- Editing information about an existing employee
         )
 
         select = input("").strip().lower()
-        if select == "1": # -- Change name
+        if select == "1":
             new_name = input("\nName: ").strip()
-            if not new_name: #-- Return "True" when "new_name" is empty
+            if not new_name:
                 print("\nError: Name cannot be empty.")
                 continue
 
             confirm = input("\nConfirm? (y/n): ").strip().lower()
-            if confirm in ("y", "yes"): #-- Return "True" when confirm = y or confirm = yes but in more nice and easier to manage way
-                employees[emp_id]["name"] = new_name
-                print(f"\nEmployee {emp_id} name has been succsesfully changed to {new_name}.")
+            if confirm in ("y", "yes"):
+                emp["name"] = new_name
+                print(f"\nEmployee {emp_id} name has been successfully changed to {new_name}.")
                 continue
             else:
                 print("\nError: Action cancelled.")
                 continue
-        elif select == "2": # -- Change role
+        elif select == "2":
             new_role = input("\nRole: ").strip()
-            if not new_role: #-- Return "True" when "new_role" is empty
+            if not new_role:
                 print("\nError: Role cannot be empty.")
                 continue
 
             confirm = input("\nConfirm? (y/n): ").strip().lower()
-            if confirm in ("y", "yes"): #-- Return "True" when confirm = y or confirm = yes but in more nice and easier to manage way
-                employees[emp_id]["role"] = new_role
-                print(f"\nEmployee {emp_id} role has been succsesfully changed to {new_role}.")
+            if confirm in ("y", "yes"):
+                emp["role"] = new_role
+                print(f"\nEmployee {emp_id} role has been successfully changed to {new_role}.")
                 continue
             else:
                 print("\nError: Action cancelled.")
                 continue
-        elif select == "3": #-- change emp hours
+        elif select == "3":
             while True:
                 print(
                     "\nSelect an option\n"
@@ -141,36 +135,40 @@ def emp_edit(): #-- Editing information about an existing employee
                 )
 
                 choice = input("").strip().lower()
-                if choice == "1": #-- Add hours
+                if choice == "1":
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"):
                         emp["hours"] += amount
-                        print(f"\nEmployee {emp_id} hours has been succsesfully changed to {emp_id['hours']}.")
+                        print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
-                elif choice == "2": #-- Substract hours
+                elif choice == "2":
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"):
-                        emp_id["hours"] -= amount
-                        print(f"\nEmployee {emp_id} hours has been succsesfully changed to {emp_id['hours']}.")
+                        if amount > emp["hours"]:
+                            emp["hours"] = 0
+                            print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
+                        else:
+                            emp["hours"] -= amount
+                            print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
-                elif choice == "3": #-- Set hours
+                elif choice == "3":
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"):
-                        emp_id["hours"] = amount
-                        print(f"\nEmployee {emp_id} hours has been succsesfully changed to {emp_id['hours']}.")
+                        emp["hours"] = amount
+                        print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
-                elif choice == "e": #-- exit
-                    confrim = input("\nConfirm? (y/n): ").strip().lower()
-                    if confrim in ("y", "yes"):
+                elif choice == "e":
+                    confirm = input("\nConfirm? (y/n): ").strip().lower()
+                    if confirm in ("y", "yes"):
                         print("\nExiting.")
                         emp_details(emp_id)
                         break
@@ -180,7 +178,7 @@ def emp_edit(): #-- Editing information about an existing employee
                 else:
                     print("\nError: invalid input.")
                     continue
-        elif select == "4": #-- change emp tasks
+        elif select == "4":
             while True:
                 print(
                     "\nSelect an option\n"
@@ -190,48 +188,60 @@ def emp_edit(): #-- Editing information about an existing employee
                     "e. exit\n"
                 )
                 choice = input("").strip().lower()
-                if choice == "1":  # -- Add tasks
+                if choice == "1":
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"):
                         emp["tasks"] += amount
-                        print(f"\nEmployee {emp_id} tasks has been succsesfully changed to {emp_id['tasks']}.")
+                        print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
-                elif choice == "2": #-- Substract tasks
+                elif choice == "2":
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"):
-                        emp["tasks"] -= amount
-                        print(f"\nEmployee {emp_id} tasks has been succsesfully changed to {emp_id['tasks']}.")
+                        if amount > emp["tasks"]:
+                            emp["tasks"] = 0
+                            print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
+                        else:
+                            emp["tasks"] -= amount
+                            print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
-                elif choice == "3": #-- Set tasks
+                elif choice == "3":
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
                     if confirm in ("y", "yes"):
                         emp["tasks"] = amount
-                        print(f"\nEmployee {emp_id} tasks has been succsesfully changed to {emp_id['tasks']}.")
+                        print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
-                elif choice == "e": # -- exit
-                    print("\nAction cancelled.")
-                    emp_details(emp_id)
-                    break
+                elif choice == "e":
+                    confirm = input("\nConfirm? (y/n): ").strip().lower()
+                    if confirm in ("y", "yes"):
+                        print("\nExiting.")
+                        emp_details(emp_id)
+                        break
+                    else:
+                        print("\nError: Action cancelled.")
+                        continue
                 else:
                     print("\nError: Invalid input.")
                     continue
         elif select == "e":
             print("\nAction cancelled.")
             return
-def emp_list(): #-- List of all regestired employees
+        else:
+            print("\nError: Invalid input.")
+            continue
+def emp_list():
     if not employees:
         print("\nEmployees not found.")
         return
     else:
         print(f"\n{'ID':<15}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
-        for w_id, emp in employees.items():  # -- prints employees in nice way.
+        for w_id, emp in employees.items():
             print(f"{emp['ID']:<15}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
