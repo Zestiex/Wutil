@@ -46,9 +46,9 @@ def emp_new(): #-- New employee creation
         return
 
     try:
-        hours_str = int(input("\nHours: "))
-        tasks_str = int(input("\nTasks: "))
-    except ValueError: #-- except works here when user inputs a string instead of number in hours_str or tasks_str
+        hours_int = int(input("\nHours: "))
+        tasks_int = int(input("\nTasks: "))
+    except ValueError: #-- except works here when user inputs a string instead of number in hours_int or tasks_int
         print("\nError: Invalid input.")
         return
 
@@ -60,8 +60,8 @@ def emp_new(): #-- New employee creation
             employees[emp_id] = {"ID" : emp_id,
                 "name" : name,
                 "role" : role,
-                "hours" : hours_str,
-                "tasks" : tasks_str
+                "hours" : hours_int,
+                "tasks" : tasks_int
             }
             print(f"\nEmployee {emp_id} has been added.")
             break
