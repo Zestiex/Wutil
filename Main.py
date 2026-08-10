@@ -36,11 +36,11 @@ def emp_new(): #-- New employee creation
             print("\nError: Action cancelled.")
             return
 
-    name = input("\nName: ")
+    name = input("\nName: ").strip()
     if not name: #-- Return "True" when name is empty
         print("\nError: Name cannot be empty.")
         return
-    role = input("\nRole: ")
+    role = input("\nRole: ").strip()
     if not role: #-- Return "True" when role is empty
         print("\nError: Role cannot be empty.")
         return
@@ -52,8 +52,6 @@ def emp_new(): #-- New employee creation
         print("\nError: Invalid input.")
         return
 
-    emp_details(emp_id)
-
     while True:
         confirm = input("\nConfirm? (y/n): ").lower()
         if confirm in ("y", "yes"):
@@ -63,6 +61,7 @@ def emp_new(): #-- New employee creation
                 "hours" : hours_int,
                 "tasks" : tasks_int
             }
+            emp_details(emp_id)
             print(f"\nEmployee {emp_id} has been added.")
             break
         elif confirm in ("n", "no"):
