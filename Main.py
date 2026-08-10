@@ -202,6 +202,10 @@ def emp_edit(): #-- Editing information about an existing employee
                     print("\nError: Invalid input.")
                     continue
             continue
+        elif select == "e":
+            print("\nAction cancelled.")
+            continue
+        continue
 def emp_list(): #-- List of all regestired employees
     print(f"\n{'ID':<15}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items(): #-- prints employees in nice way.
