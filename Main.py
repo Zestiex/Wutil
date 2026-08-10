@@ -53,7 +53,7 @@ def emp_new(): #-- New employee creation
         return
 
     while True:
-        confirm = input("\nConfirm? (y/n): ").lower()
+        confirm = input("\nConfirm? (y/n): ").lower().strip()
         if confirm in ("y", "yes"):
             employees[emp_id] = {"ID" : emp_id,
                 "name" : name,
@@ -162,7 +162,6 @@ def emp_edit(): #-- Editing information about an existing employee
                 else:
                     print("\nError: invalid input.")
                     continue
-            continue
         elif select == "4": #-- change emp tasks
             while True:
                 print(
@@ -201,11 +200,9 @@ def emp_edit(): #-- Editing information about an existing employee
                 else:
                     print("\nError: Invalid input.")
                     continue
-            continue
         elif select == "e":
             print("\nAction cancelled.")
-            continue
-        continue
+            return
 def emp_list(): #-- List of all regestired employees
     print(f"\n{'ID':<15}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
     for w_id, emp in employees.items(): #-- prints employees in nice way.
