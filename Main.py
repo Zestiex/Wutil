@@ -20,9 +20,9 @@ def get_int():
         except ValueError:
             print("\nError: Invaild input.")
 def id_generator(): #-- ID generator
-    min, max = 0, 999999999
+    min_val, max_val = 0, 999999999
     while True:
-        emp_id = f"EMP-{random.randint(min, max)}" #-- generates an random string of nubmers from m
+        emp_id = f"EMP-{random.randint(min_val, max_val)}" #-- generates an random string of nubmers from m
         if emp_id not in employees: #-- checks if generated id is not taken and in case it is returns unique generated "worker_id"
             return emp_id
 def emp_new(): #-- New employee creation
