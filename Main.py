@@ -193,21 +193,27 @@ def emp_edit(): #-- Editing information about an existing employee
                 if choice == "1":  # -- Add tasks
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["tasks"] += amount
+                    if confirm in ("y", "yes"):
+                        emp["tasks"] += amount
+                        print(f"\nEmployee {emp_id} tasks has been succsesfully changed to {emp_id['tasks']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "2": #-- Substract tasks
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["tasks"] -= amount
+                    if confirm in ("y", "yes"):
+                        emp["tasks"] -= amount
+                        print(f"\nEmployee {emp_id} tasks has been succsesfully changed to {emp_id['tasks']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
                 elif choice == "3": #-- Set tasks
                     amount = get_int()
                     confirm = input("\nConfirm? (y/n): ").strip().lower()
-                    if confirm in ("y", "yes"): emp["tasks"] = amount
+                    if confirm in ("y", "yes"):
+                        emp["tasks"] = amount
+                        print(f"\nEmployee {emp_id} tasks has been succsesfully changed to {emp_id['tasks']}.")
                     else:
                         print("\nError: Action cancelled.")
                         continue
