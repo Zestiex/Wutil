@@ -52,7 +52,7 @@ def emp_new(): #-- New employee creation
         print("\nError: Invalid input.")
         return
 
-    emp_details(employees[emp_id])
+    emp_details(emp_id)
 
     while True:
         confirm = input("\nConfirm? (y/n): ").lower()
@@ -83,7 +83,7 @@ def emp_edit(): #-- Editing information about an existing employee
         return
 
     emp = employees[emp_id] # -- declares that "emp" is an employee with an specific Id, the same id that user selected
-    emp_details(employees[emp_id])
+    emp_details(emp_id)
 
     while True:
         print(
@@ -158,7 +158,7 @@ def emp_edit(): #-- Editing information about an existing employee
                         continue
                 elif choice == "e": #-- exit
                     print("\nAction cancelled.")
-                    emp_details(employees[emp_id])
+                    emp_details(emp_id)
                     break
                 else:
                     print("\nError: invalid input.")
@@ -197,7 +197,7 @@ def emp_edit(): #-- Editing information about an existing employee
                         continue
                 elif choice == "e": # -- exit
                     print("\nAction cancelled.")
-                    emp_details(employees[emp_id])
+                    emp_details(emp_id)
                     break
                 else:
                     print("\nError: Invalid input.")
