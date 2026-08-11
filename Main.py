@@ -372,5 +372,6 @@ def main():
         else:
             print("\nError: Invalid input.")
             continue
+
 if __name__ == "__main__":
     main()
