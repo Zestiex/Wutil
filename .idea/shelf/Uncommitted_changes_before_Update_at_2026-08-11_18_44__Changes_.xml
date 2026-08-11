@@ -1,0 +1,13 @@
+<changelist name="Uncommitted_changes_before_Update_at_2026-08-11_18_44_[Changes]" date="1786466643816" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2026-08-11_18_44_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 2026-08-11 18:44 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="build/Main/Main.pkg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/Main/base_library.zip" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="build/Main/PYZ-00.pyz" />
+  </binary>
+</changelist>

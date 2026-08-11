@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="217ed036-0187-43d1-ada6-9d081c7502e4" name="Changes" comment="minor changes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Zestiex&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Zestiex/Wutil.git&quot;,
+    &quot;accountId&quot;: &quot;a22a1802-f858-4ed0-9fd7-97243961c0bf&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="3H13GLCq0wSoIQb6GK1RmbYqj2G" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-c59985aa861c-c2ffad84badb-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-261.24374.152" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="217ed036-0187-43d1-ada6-9d081c7502e4" name="Changes" comment="" />
+      <created>1785021650703</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1785021650703</updated>
+      <workItem from="1785021651741" duration="1217000" />
+      <workItem from="1785616587134" duration="8564000" />
+      <workItem from="1785666144565" duration="279000" />
+      <workItem from="1785701722813" duration="756000" />
+      <workItem from="1785763971819" duration="1474000" />
+      <workItem from="1785958433476" duration="4444000" />
+      <workItem from="1786027047085" duration="5267000" />
+      <workItem from="1786032885452" duration="29000" />
+      <workItem from="1786032933879" duration="242000" />
+      <workItem from="1786033184339" duration="63000" />
+      <workItem from="1786033450260" duration="1068000" />
+      <workItem from="1786034548426" duration="5202000" />
+      <workItem from="1786048076739" duration="1748000" />
+      <workItem from="1786083580878" duration="729000" />
+      <workItem from="1786133531297" duration="9317000" />
+      <workItem from="1786379022709" duration="4662000" />
+      <workItem from="1786449867242" duration="8590000" />
+      <workItem from="1786466461658" duration="293000" />
+    </task>
+    <task id="LOCAL−00027" summary="'def edit_emp()' added abbility to substract hours from an employee">
+      <option name="closed" value="true" />
+      <created>1786048502321</created>
+      <option name="number" value="LOCAL−00027" />
+      <option name="presentableId" value="LOCAL−00027" />
+      <updated>1786048502321</updated>
+    </task>
+    <task id="LOCAL−00028" summary="'def edit_emp()' did a bad decision and was fixing it, now program work as usual">
+      <option name="closed" value="true" />
+      <created>1786049195952</created>
+      <option name="number" value="LOCAL−00028" />
+      <option name="presentableId" value="LOCAL−00028" />
+      <updated>1786049195952</updated>
+    </task>
+    <task id="LOCAL−00029" summary="'def edit_emp()' added comments">
+      <option name="closed" value="true" />
+      <created>1786049270086</created>
+      <option name="number" value="LOCAL−00029" />
+      <option name="presentableId" value="LOCAL−00029" />
+      <updated>1786049270086</updated>
+    </task>
+    <task id="LOCAL−00030" summary="'def new_emp()' added an loop in begining and finaly implemended 'id_generator()' function&#10;&#10;'def id_generator()' made min and max values fixed and not configurable as it was before">
+      <option name="closed" value="true" />
+      <created>1786049678484</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1786049678484</updated>
+    </task>
+    <task id="LOCAL−00031" summary="'def new_emp()' added some comments">
+      <option name="closed" value="true" />
+      <created>1786049747208</created>
+      <option name="number" value="LOCAL−00031" />
+      <option name="presentableId" value="LOCAL−00031" />
+      <updated>1786049747208</updated>
+    </task>
+    <task id="LOCAL−00032" summary="'def new_emp()' added another one comment">
+      <option name="closed" value="true" />
+      <created>1786049818114</created>
+      <option name="number" value="LOCAL−00032" />
+      <option name="presentableId" value="LOCAL−00032" />
+      <updated>1786049818114</updated>
+    </task>
+    <task id="LOCAL−00033" summary="'def edit_emp()' continuied with options">
+      <option name="closed" value="true" />
+      <created>1786084114716</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1786084114717</updated>
+    </task>
+    <task id="LOCAL−00034" summary="'def edit_emp()' started to work on editing employees hours">
+      <option name="closed" value="true" />
+      <created>1786136776487</created>
+      <option name="number" value="LOCAL−00034" />
+      <option name="presentableId" value="LOCAL−00034" />
+      <updated>1786136776487</updated>
+    </task>
+    <task id="LOCAL−00035" summary="'def edit_emp()' changed text to correspond the function">
+      <option name="closed" value="true" />
+      <created>1786137037575</created>
+      <option name="number" value="LOCAL−00035" />
+      <option name="presentableId" value="LOCAL−00035" />
+      <updated>1786137037575</updated>
+    </task>
+    <task id="LOCAL−00036" summary="'def edit_emp()' Continuing with tasks">
+      <option name="closed" value="true" />
+      <created>1786137438476</created>
+      <option name="number" value="LOCAL−00036" />
+      <option name="presentableId" value="LOCAL−00036" />
+      <updated>1786137438476</updated>
+    </task>
+    <task id="LOCAL−00037" summary="'def edit_emp()' Continuing with tasks">
+      <option name="closed" value="true" />
+      <created>1786137494542</created>
+      <option name="number" value="LOCAL−00037" />
+      <option name="presentableId" value="LOCAL−00037" />
+      <updated>1786137494542</updated>
+    </task>
+    <task id="LOCAL−00038" summary="'def edit_emp()' it looks like the function now complete, it is probably time to start building main loop where everything will happend i guess">
+      <option name="closed" value="true" />
+      <created>1786138367681</created>
+      <option name="number" value="LOCAL−00038" />
+      <option name="presentableId" value="LOCAL−00038" />
+      <updated>1786138367681</updated>
+    </task>
+    <task id="LOCAL−00039" summary="Minor functions placening in the code changes">
+      <option name="closed" value="true" />
+      <created>1786138417923</created>
+      <option name="number" value="LOCAL−00039" />
+      <option name="presentableId" value="LOCAL−00039" />
+      <updated>1786138417923</updated>
+    </task>
+    <task id="LOCAL−00040" summary="Minor clean up and some comments added">
+      <option name="closed" value="true" />
+      <created>1786138587048</created>
+      <option name="number" value="LOCAL−00040" />
+      <option name="presentableId" value="LOCAL−00040" />
+      <updated>1786138587048</updated>
+    </task>
+    <task id="LOCAL−00041" summary="Fixed alot of errors and bugs in the entire code">
+      <option name="closed" value="true" />
+      <created>1786142739814</created>
+      <option name="number" value="LOCAL−00041" />
+      <option name="presentableId" value="LOCAL−00041" />
+      <updated>1786142739814</updated>
+    </task>
+    <task id="LOCAL−00042" summary="Changed emp_id check structure">
+      <option name="closed" value="true" />
+      <created>1786143232862</created>
+      <option name="number" value="LOCAL−00042" />
+      <option name="presentableId" value="LOCAL−00042" />
+      <updated>1786143232864</updated>
+    </task>
+    <task id="LOCAL−00043" summary="More minor Bug fixes">
+      <option name="closed" value="true" />
+      <created>1786143548069</created>
+      <option name="number" value="LOCAL−00043" />
+      <option name="presentableId" value="LOCAL−00043" />
+      <updated>1786143548069</updated>
+    </task>
+    <task id="LOCAL−00044" summary="More Bug fixes">
+      <option name="closed" value="true" />
+      <created>1786143648644</created>
+      <option name="number" value="LOCAL−00044" />
+      <option name="presentableId" value="LOCAL−00044" />
+      <updated>1786143648644</updated>
+    </task>
+    <task id="LOCAL−00045" summary="Even More Bug fixes">
+      <option name="closed" value="true" />
+      <created>1786143798103</created>
+      <option name="number" value="LOCAL−00045" />
+      <option name="presentableId" value="LOCAL−00045" />
+      <updated>1786143798103</updated>
+    </task>
+    <task id="LOCAL−00046" summary="'def get_int(promt)' gets an int value, this is master functions that saves me some big amount of code since i can just recall it all the time instead of needing to write try except all the time">
+      <option name="closed" value="true" />
+      <created>1786144084064</created>
+      <option name="number" value="LOCAL−00046" />
+      <option name="presentableId" value="LOCAL−00046" />
+      <updated>1786144084064</updated>
+    </task>
+    <task id="LOCAL−00047" summary="'def emp_details(emp)' just writes employee details">
+      <option name="closed" value="true" />
+      <created>1786145258241</created>
+      <option name="number" value="LOCAL−00047" />
+      <option name="presentableId" value="LOCAL−00047" />
+      <updated>1786145258241</updated>
+    </task>
+    <task id="LOCAL−00048" summary="implemented new function emp_details into the code">
+      <option name="closed" value="true" />
+      <created>1786145382643</created>
+      <option name="number" value="LOCAL−00048" />
+      <option name="presentableId" value="LOCAL−00048" />
+      <updated>1786145382643</updated>
+    </task>
+    <task id="LOCAL−00049" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1786145438990</created>
+      <option name="number" value="LOCAL−00049" />
+      <option name="presentableId" value="LOCAL−00049" />
+      <updated>1786145438990</updated>
+    </task>
+    <task id="LOCAL−00050" summary="'def emp_details(emp_id)' changed the main idea of it">
+      <option name="closed" value="true" />
+      <created>1786145794984</created>
+      <option name="number" value="LOCAL−00050" />
+      <option name="presentableId" value="LOCAL−00050" />
+      <updated>1786145794985</updated>
+    </task>
+    <task id="LOCAL−00051" summary="'def get_int()' implemented the function into the code">
+      <option name="closed" value="true" />
+      <created>1786145925484</created>
+      <option name="number" value="LOCAL−00051" />
+      <option name="presentableId" value="LOCAL−00051" />
+      <updated>1786145925484</updated>
+    </task>
+    <task id="LOCAL−00052" summary="'def emp_list():' minor changes">
+      <option name="closed" value="true" />
+      <created>1786146062680</created>
+      <option name="number" value="LOCAL−00052" />
+      <option name="presentableId" value="LOCAL−00052" />
+      <updated>1786146062680</updated>
+    </task>
+    <task id="LOCAL−00053" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1786146167684</created>
+      <option name="number" value="LOCAL−00053" />
+      <option name="presentableId" value="LOCAL−00053" />
+      <updated>1786146167684</updated>
+    </task>
+    <task id="LOCAL−00054" summary="Changed 'emp_detailes(employees[emp_id])' to 'emp_detailes(emp_id)'">
+      <option name="closed" value="true" />
+      <created>1786379239377</created>
+      <option name="number" value="LOCAL−00054" />
+      <option name="presentableId" value="LOCAL−00054" />
+      <updated>1786379239377</updated>
+    </task>
+    <task id="LOCAL−00055" summary="'def id_generator():' changed names from min, max. To min_val, max_val so they wont override with build in func">
+      <option name="closed" value="true" />
+      <created>1786379351395</created>
+      <option name="number" value="LOCAL−00055" />
+      <option name="presentableId" value="LOCAL−00055" />
+      <updated>1786379351395</updated>
+    </task>
+    <task id="LOCAL−00056" summary="Changed name hours_str and tasks_str to hours_int, tasks_int">
+      <option name="closed" value="true" />
+      <created>1786379459208</created>
+      <option name="number" value="LOCAL−00056" />
+      <option name="presentableId" value="LOCAL−00056" />
+      <updated>1786379459208</updated>
+    </task>
+    <task id="LOCAL−00057" summary="'def emp_new():' the name and role variables are now have .strip() and changed when info about employee is displayed">
+      <option name="closed" value="true" />
+      <created>1786379712512</created>
+      <option name="number" value="LOCAL−00057" />
+      <option name="presentableId" value="LOCAL−00057" />
+      <updated>1786379712512</updated>
+    </task>
+    <task id="LOCAL−00058" summary="'def emp_new():' added missing elif select == &quot;e&quot;:">
+      <option name="closed" value="true" />
+      <created>1786379827153</created>
+      <option name="number" value="LOCAL−00058" />
+      <option name="presentableId" value="LOCAL−00058" />
+      <updated>1786379827153</updated>
+    </task>
+    <task id="LOCAL−00059" summary="'def emp_new():' added missing .strip() to confirm variable">
+      <option name="closed" value="true" />
+      <created>1786380010940</created>
+      <option name="number" value="LOCAL−00059" />
+      <option name="presentableId" value="LOCAL−00059" />
+      <updated>1786380010940</updated>
+    </task>
+    <task id="LOCAL−00060" summary="'def emp_list():' added a check if employees list is empty&#10;&#10;'def get_int():' added a loop that checks whenever the amount is negative and keeps trowing erros until it gets an positive amount&#10;&#10;'def emp_edit():' added a confrimation when user tries to exit, and added messages confrimation feedback">
+      <option name="closed" value="true" />
+      <created>1786380985578</created>
+      <option name="number" value="LOCAL−00060" />
+      <option name="presentableId" value="LOCAL−00060" />
+      <updated>1786380985578</updated>
+    </task>
+    <task id="LOCAL−00061" summary="'def emp_edit():' added a confrimation feedback message when modifying tasks">
+      <option name="closed" value="true" />
+      <created>1786381223950</created>
+      <option name="number" value="LOCAL−00061" />
+      <option name="presentableId" value="LOCAL−00061" />
+      <updated>1786381223950</updated>
+    </task>
+    <task id="LOCAL−00062" summary="major bug fixes and optimizations">
+      <option name="closed" value="true" />
+      <created>1786383290040</created>
+      <option name="number" value="LOCAL−00062" />
+      <option name="presentableId" value="LOCAL−00062" />
+      <updated>1786383290040</updated>
+    </task>
+    <task id="LOCAL−00063" summary="'def get_confirm():' added the function">
+      <option name="closed" value="true" />
+      <created>1786383626853</created>
+      <option name="number" value="LOCAL−00063" />
+      <option name="presentableId" value="LOCAL−00063" />
+      <updated>1786383626853</updated>
+    </task>
+    <task id="LOCAL−00064" summary="Minor changes">
+      <option name="closed" value="true" />
+      <created>1786450393460</created>
+      <option name="number" value="LOCAL−00064" />
+      <option name="presentableId" value="LOCAL−00064" />
+      <updated>1786450393460</updated>
+    </task>
+    <task id="LOCAL−00065" summary="Starting to work on the main program">
+      <option name="closed" value="true" />
+      <created>1786450504009</created>
+      <option name="number" value="LOCAL−00065" />
+      <option name="presentableId" value="LOCAL−00065" />
+      <updated>1786450504009</updated>
+    </task>
+    <task id="LOCAL−00066" summary="Added productivity report func">
+      <option name="closed" value="true" />
+      <created>1786451961413</created>
+      <option name="number" value="LOCAL−00066" />
+      <option name="presentableId" value="LOCAL−00066" />
+      <updated>1786451961413</updated>
+    </task>
+    <task id="LOCAL−00067" summary="added a check and a needed value in 'def get_int(val)' so the promt of get_int() func can be customized for different kind of sittuation and so user can know what amount and what for he is typing it">
+      <option name="closed" value="true" />
+      <created>1786452908092</created>
+      <option name="number" value="LOCAL−00067" />
+      <option name="presentableId" value="LOCAL−00067" />
+      <updated>1786452908092</updated>
+    </task>
+    <task id="LOCAL−00068" summary="Major changes">
+      <option name="closed" value="true" />
+      <created>1786454166450</created>
+      <option name="number" value="LOCAL−00068" />
+      <option name="presentableId" value="LOCAL−00068" />
+      <updated>1786454166450</updated>
+    </task>
+    <task id="LOCAL−00069" summary="Minor changes">
+      <option name="closed" value="true" />
+      <created>1786454556046</created>
+      <option name="number" value="LOCAL−00069" />
+      <option name="presentableId" value="LOCAL−00069" />
+      <updated>1786454556046</updated>
+    </task>
+    <task id="LOCAL−00070" summary="Compiled the program into an .exe exectuable">
+      <option name="closed" value="true" />
+      <created>1786455392379</created>
+      <option name="number" value="LOCAL−00070" />
+      <option name="presentableId" value="LOCAL−00070" />
+      <updated>1786455392379</updated>
+    </task>
+    <task id="LOCAL−00071" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1786455513676</created>
+      <option name="number" value="LOCAL−00071" />
+      <option name="presentableId" value="LOCAL−00071" />
+      <updated>1786455513677</updated>
+    </task>
+    <task id="LOCAL−00072" summary="Made an exectuable">
+      <option name="closed" value="true" />
+      <created>1786455773961</created>
+      <option name="number" value="LOCAL−00072" />
+      <option name="presentableId" value="LOCAL−00072" />
+      <updated>1786455773962</updated>
+    </task>
+    <task id="LOCAL−00073" summary="Uncomplete Demo version of the program, initial realise i would say">
+      <option name="closed" value="true" />
+      <created>1786456106074</created>
+      <option name="number" value="LOCAL−00073" />
+      <option name="presentableId" value="LOCAL−00073" />
+      <updated>1786456106074</updated>
+    </task>
+    <task id="LOCAL−00074" summary="removed some unneccecary folders">
+      <option name="closed" value="true" />
+      <created>1786456732017</created>
+      <option name="number" value="LOCAL−00074" />
+      <option name="presentableId" value="LOCAL−00074" />
+      <updated>1786456732017</updated>
+    </task>
+    <task id="LOCAL−00075" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1786466629032</created>
+      <option name="number" value="LOCAL−00075" />
+      <option name="presentableId" value="LOCAL−00075" />
+      <updated>1786466629032</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="62e44634-c92b-46fd-819d-13bc85776e39" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="62e44634-c92b-46fd-819d-13bc85776e39">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="'def emp_details(emp)' just writes employee details" />
+    <MESSAGE value="implemented new function emp_details into the code" />
+    <MESSAGE value="'def emp_details(emp_id)' changed the main idea of it" />
+    <MESSAGE value="'def get_int()' implemented the function into the code" />
+    <MESSAGE value="'def emp_list():' minor changes" />
+    <MESSAGE value="Changed 'emp_detailes(employees[emp_id])' to 'emp_detailes(emp_id)'" />
+    <MESSAGE value="'def id_generator():' changed names from min, max. To min_val, max_val so they wont override with build in func" />
+    <MESSAGE value="Changed name hours_str and tasks_str to hours_int, tasks_int" />
+    <MESSAGE value="'def emp_new():' the name and role variables are now have .strip() and changed when info about employee is displayed" />
+    <MESSAGE value="'def emp_new():' added missing elif select == &quot;e&quot;:" />
+    <MESSAGE value="'def emp_new():' added missing .strip() to confirm variable" />
+    <MESSAGE value="'def emp_list():' added a check if employees list is empty&#10;&#10;'def get_int():' added a loop that checks whenever the amount is negative and keeps trowing erros until it gets an positive amount&#10;&#10;'def emp_edit():' added a confrimation when user tries to exit, and added messages confrimation feedback" />
+    <MESSAGE value="'def emp_edit():' added a confrimation feedback message when modifying tasks" />
+    <MESSAGE value="major bug fixes and optimizations" />
+    <MESSAGE value="'def get_confirm():' added the function" />
+    <MESSAGE value="Starting to work on the main program" />
+    <MESSAGE value="Added productivity report func" />
+    <MESSAGE value="added a check and a needed value in 'def get_int(val)' so the promt of get_int() func can be customized for different kind of sittuation and so user can know what amount and what for he is typing it" />
+    <MESSAGE value="Major changes" />
+    <MESSAGE value="Minor changes" />
+    <MESSAGE value="Compiled the program into an .exe exectuable" />
+    <MESSAGE value="Made an exectuable" />
+    <MESSAGE value="Uncomplete Demo version of the program, initial realise i would say" />
+    <MESSAGE value="removed some unneccecary folders" />
+    <MESSAGE value="minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="minor changes" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Wutil$Main.coverage" NAME="Main Coverage Results" MODIFIED="1786455902304" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
