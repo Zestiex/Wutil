@@ -52,6 +52,8 @@ def get_confirm():
         return True
     elif confirm in ("n", "no"):
         return False
+    elif confirm in ("e", "e.", "exit"):
+        return confrim == "exit"
     else:
         print("\nError: Invalid input.")
         return None
@@ -70,17 +72,29 @@ def emp_new():
         if get_confirm():
             emp_id = unauth
             break
+        elif get_confirm() == "exit":
+            print("\nExiting...")
+            input("\nPress any key to continue...")
+            break
         else:
-            print("\nGenerating a new ID.")
+            print("Generating a new ID.")
             continue
 
-    name = input("\nName: ").strip()
+    name = input("\nName (e. exit): ").strip()
     if not name:
         print("\nError: Name cannot be empty.")
         return
-    role = input("\nRole: ").strip()
+    elif name in ("e", "e.", "exit"):
+        print("Exiting...")
+        input("\nPress any key to continue...")
+        return
+    role = input("\nRole (e. exit): ").strip()
     if not role:
         print("\nError: Role cannot be empty.")
+        return
+    elif role in ("e", "e.", "exit"):
+        print("Exiting...")
+        input("\nPress any key to continue...")
         return
 
     hours_int = get_int("hours")
@@ -97,9 +111,15 @@ def emp_new():
             }
             emp_details(emp_id)
             print(f"\nEmployee {emp_id} has been added.")
+            input("\nPress any key to continue...")
             break
         elif confirm is False:
             print("\nEmployee creation cancelled.")
+            input("\nPress any key to continue...")
+            break
+        elif confirm == "exit":
+            print("\nEmployee creation cancelled.")
+            input("\nPress any key to continue...")
             break
         else:
             continue
@@ -139,9 +159,11 @@ def emp_edit():
             if confirm:
                 emp["name"] = new_name
                 print(f"\nEmployee {emp_id} name has been successfully changed to {new_name}.")
+                input("\nPress any key to continue...")
                 continue
             elif confirm is False:
                 print("\nError: Action cancelled.")
+                input("\nPress any key to continue...")
                 continue
             else:
                 continue
@@ -155,9 +177,11 @@ def emp_edit():
             if confirm:
                 emp["role"] = new_role
                 print(f"\nEmployee {emp_id} role has been successfully changed to {new_role}.")
+                input("\nPress any key to continue...")
                 continue
             elif confirm is False:
                 print("\nError: Action cancelled.")
+                input("\nPress any key to continue...")
                 continue
             else:
                 continue
@@ -178,8 +202,10 @@ def emp_edit():
                     if confirm:
                         emp["hours"] += amount
                         print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
+                        input("\nPress any key to continue...")
                     elif confirm is False:
                         print("\nError: Action cancelled.")
+                        input("\nPress any key to continue...")
                         continue
                     else:
                         continue
@@ -190,11 +216,18 @@ def emp_edit():
                         if amount > emp["hours"]:
                             emp["hours"] = 0
                             print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
+                            input("\nPress any key to continue...")
                         else:
                             emp["hours"] -= amount
                             print(f"\nEmployee {emp_id} hours has been successfully changed to {emp['hours']}.")
+                            input("\nPress any key to continue...")
                     elif confirm is False:
                         print("\nError: Action cancelled.")
+                        input("\nPress any key to continue...")
+                        continue
+                    elif confirm == "exit":
+                        print("\nError: Action cancelled.")
+                        input("\nPress any key to continue...")
                         continue
                     else:
                         continue
@@ -239,10 +272,17 @@ def emp_edit():
                     if confirm:
                         emp["tasks"] += amount
                         print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
+                        input("\nPress any key to continue...")
                     elif confirm is False:
                         print("\nError: Action cancelled.")
+                        input("\nPress any key to continue...")
+                        continue
+                    elif confirm == "exit":
+                        print("\nError: Action cancelled.")
+                        input("\nPress any key to continue...")
                         continue
                     else:
+                        input("\nPress any key to continue...")
                         continue
                 elif choice == "2":
                     amount = get_int("tasks")
@@ -251,14 +291,18 @@ def emp_edit():
                         if amount > emp["tasks"]:
                             emp["tasks"] = 0
                             print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
+                            input("\nPress any key to continue...")
+                        elif confirm is False:
+                            print("\nError: Action cancelled.")
+                            input("\nPress any key to continue...")
+                            continue
+                        elif confirm == "exit":
+                            print("\nError: Action cancelled.")
+                            input("\nPress any key to continue...")
+                            continue
                         else:
-                            emp["tasks"] -= amount
-                            print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
-                    elif confirm is False:
-                        print("\nError: Action cancelled.")
-                        continue
-                    else:
-                        continue
+                            input("\nPress any key to continue...")
+                            continue
                 elif choice == "3":
                     amount = get_int("tasks")
                     confirm = get_confirm()
@@ -275,12 +319,8 @@ def emp_edit():
                     if confirm:
                         print("\nExiting.")
                         emp_details(emp_id)
+                        input("\nPress any key to continue...")
                         break
-                    elif confirm is False:
-                        print("\nError: Action cancelled.")
-                        continue
-                    else:
-                        continue
                 else:
                     print("\nError: Invalid input.")
                     continue
@@ -290,6 +330,9 @@ def emp_edit():
         else:
             print("\nError: Invalid input.")
             continue
+
+def emp_delete():
+    pass
 
 def emp_list():
     if not employees:
