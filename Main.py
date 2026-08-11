@@ -1,6 +1,10 @@
 import random
+import os
 
 employees = {}
+
+def clear_console():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def emp_productiviy():
     for emp_id in employees:
@@ -289,7 +293,7 @@ def emp_edit():
                             emp["tasks"] = 0
                             print(f"\nEmployee {emp_id} tasks has been successfully changed to {emp['tasks']}.")
                             input("\nPress any key to continue...")
-                        elif confirm is False:
+                        elif not confirm:
                             print("\nError: Action cancelled.")
                             input("\nPress any key to continue...")
                             continue
