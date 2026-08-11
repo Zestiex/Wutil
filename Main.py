@@ -279,3 +279,10 @@ def emp_list():
         print(f"\n{'ID':<15}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
         for w_id, emp in employees.items():
             print(f"{emp['ID']:<15}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
