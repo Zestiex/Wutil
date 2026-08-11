@@ -2,6 +2,17 @@ import random
 
 employees = {}
 
+def emp_productiviy():
+    emp_id = input("\nID: ").strip()
+    if not emp_id:
+        print("\nError: ID cannot be empty.")
+        return None
+    elif emp_id not in employees:
+        print("\nError: ID does not exist.")
+        return None
+
+    return employees[emp_id]["hours"] / employees[emp_id]["tasks"]
+
 def emp_details(emp_id):
     if emp_id not in employees:
         print("\nError: ID does not exist.")
