@@ -69,10 +69,11 @@ def emp_new():
     while True:
         unauth = id_generator()
         print(f"\nNewly Generated id: {unauth}")
-        if get_confirm():
+        confirm = get_confirm()
+        if confirm:
             emp_id = unauth
             break
-        elif get_confirm() == "exit":
+        elif confirm == "exit":
             print("\nExiting...")
             input("\nPress any key to continue...")
             break
