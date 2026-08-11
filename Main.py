@@ -29,9 +29,9 @@ def emp_details(emp_id):
 
 def get_int(val):
     if val in ("hours", "h"):
-        promt = "Amount of hours: "
+        promt = "\nAmount of hours: "
     elif val in ("tasks", "t"):
-        promt = "Amount of tasks: "
+        promt = "\nAmount of tasks: "
     else:
         promt = "amount: "
 
@@ -53,7 +53,7 @@ def get_confirm():
     elif confirm in ("n", "no"):
         return False
     elif confirm in ("e", "e.", "exit"):
-        return confrim == "exit"
+        return confirm == "exit"
     else:
         print("\nError: Invalid input.")
         return None
@@ -114,10 +114,6 @@ def emp_new():
             input("\nPress any key to continue...")
             break
         elif confirm is False:
-            print("\nEmployee creation cancelled.")
-            input("\nPress any key to continue...")
-            break
-        elif confirm == "exit":
             print("\nEmployee creation cancelled.")
             input("\nPress any key to continue...")
             break
@@ -342,6 +338,7 @@ def emp_list():
         print(f"\n{'ID':<15}{'Name':<15}{'Role':<15}{'Hours':<8}{'Tasks':<6}")
         for w_id, emp in employees.items():
             print(f"{emp['ID']:<15}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
+    input("\nPress any key to continue...")
 
 def main():
     while True:
