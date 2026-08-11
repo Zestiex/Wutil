@@ -13,6 +13,7 @@ def emp_details(emp_id):
           f"Role: {emp['role']}\n"
           f"Hours: {emp['hours']}\n"
           f"Tasks: {emp['tasks']}")
+
 def get_int():
     while True:
         try:
@@ -24,6 +25,7 @@ def get_int():
                 return amount
         except ValueError:
             print("\nError: Invalid input.")
+
 def get_confirm():
     confirm = input("\nConfirm? (y/n): ").strip().lower()
     if confirm in ("y", "yes"):
@@ -33,12 +35,14 @@ def get_confirm():
     else:
         print("\nError: Invalid input.")
         return None
+
 def id_generator():
     min_val, max_val = 0, 999999999
     while True:
         emp_id = f"EMP-{random.randint(min_val, max_val)}"
         if emp_id not in employees:
             return emp_id
+
 def emp_new():
     while True:
         unauth = id_generator()
@@ -79,6 +83,7 @@ def emp_new():
             break
         else:
             continue
+
 def emp_edit():
     for emp_id in employees:
         print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
@@ -265,6 +270,7 @@ def emp_edit():
         else:
             print("\nError: Invalid input.")
             continue
+
 def emp_list():
     if not employees:
         print("\nEmployees not found.")
