@@ -347,11 +347,13 @@ def emp_list():
 
 def main():
     while True:
+        clear_console()
         choice = input("\nSelect an option\n"
                        "1. add employee\n"
                        "2. delete employee\n"
                        "3. change employee\n"
-                       "4. display employees\n"
+                       "4. display productivity\n"
+                       "5. Display employees\n"
                        "e. exit\n"
                        "").strip().lower()
 
@@ -362,12 +364,13 @@ def main():
         elif choice == "3":
             emp_edit()
         elif choice == "4":
+            pass
+        elif choice == "5":
             emp_list()
         elif choice == "e":
             break
         else:
             print("\nError: Invalid input.")
             continue
-
 if __name__ == "__main__":
     main()
