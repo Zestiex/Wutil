@@ -332,7 +332,7 @@ def emp_edit():
             print("\nError: Invalid input.")
             continue
 
-def emp_delete():
+def emp_delete(): #-- WIP
     pass
 
 def emp_list():
@@ -350,9 +350,9 @@ def main():
         clear_console()
         choice = input("\nSelect an option\n"
                        "1. add employee\n"
-                       "2. delete employee\n"
+                       "2. delete employee WIP(Does not work)\n"
                        "3. change employee\n"
-                       "4. display productivity\n"
+                       "4. display productivity WIP\n"
                        "5. Display employees\n"
                        "e. exit\n"
                        "").strip().lower()
