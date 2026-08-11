@@ -3,6 +3,8 @@ import random
 employees = {}
 
 def emp_productiviy():
+    for emp_id in employees:
+        print(f"\nID: {emp_id} | Name: {employees[emp_id]['name']}")
     emp_id = input("\nID: ").strip()
     if not emp_id:
         print("\nError: ID cannot be empty.")
@@ -25,10 +27,17 @@ def emp_details(emp_id):
           f"Hours: {emp['hours']}\n"
           f"Tasks: {emp['tasks']}")
 
-def get_int():
+def get_int(val):
+    if val in ("hours", "h"):
+        promt = "Amount of hours: "
+    elif val in ("tasks", "t"):
+        promt = "Amount of tasks: "
+    else:
+        promt = "amount: "
+
     while True:
         try:
-            amount = int(input("\nAmount: ").strip())
+            amount = int(input(promt).strip())
             if amount < 0:
                 print("\nError: Amount cannot be negative.")
                 continue
@@ -38,7 +47,7 @@ def get_int():
             print("\nError: Invalid input.")
 
 def get_confirm():
-    confirm = input("\nConfirm? (y/n): ").strip().lower()
+    confirm = input("Confirm? (y/n): ").strip().lower()
     if confirm in ("y", "yes"):
         return True
     elif confirm in ("n", "no"):
@@ -57,7 +66,7 @@ def id_generator():
 def emp_new():
     while True:
         unauth = id_generator()
-        print(f"\nNewly Generated id: {unauth}\n")
+        print(f"\nNewly Generated id: {unauth}")
         if get_confirm():
             emp_id = unauth
             break
@@ -74,8 +83,8 @@ def emp_new():
         print("\nError: Role cannot be empty.")
         return
 
-    hours_int = get_int()
-    tasks_int = get_int()
+    hours_int = get_int("hours")
+    tasks_int = get_int("tasks")
 
     while True:
         confirm = get_confirm()
@@ -97,7 +106,7 @@ def emp_new():
 
 def emp_edit():
     for emp_id in employees:
-        print(f"\nID: {emp_id}\n | Name: {employees[emp_id]['name']}")
+        print(f"\nID: {emp_id} | Name: {employees[emp_id]['name']}")
     emp_id = input("\nID: ").strip()
     if not emp_id:
         print("\nError: ID cannot be empty.")
@@ -164,7 +173,7 @@ def emp_edit():
 
                 choice = input("").strip().lower()
                 if choice == "1":
-                    amount = get_int()
+                    amount = get_int("hours")
                     confirm = get_confirm()
                     if confirm:
                         emp["hours"] += amount
@@ -175,7 +184,7 @@ def emp_edit():
                     else:
                         continue
                 elif choice == "2":
-                    amount = get_int()
+                    amount = get_int("hours")
                     confirm = get_confirm()
                     if confirm:
                         if amount > emp["hours"]:
@@ -190,7 +199,7 @@ def emp_edit():
                     else:
                         continue
                 elif choice == "3":
-                    amount = get_int()
+                    amount = get_int("hours")
                     confirm = get_confirm()
                     if confirm:
                         emp["hours"] = amount
@@ -225,7 +234,7 @@ def emp_edit():
                 )
                 choice = input("").strip().lower()
                 if choice == "1":
-                    amount = get_int()
+                    amount = get_int("tasks")
                     confirm = get_confirm()
                     if confirm:
                         emp["tasks"] += amount
@@ -236,7 +245,7 @@ def emp_edit():
                     else:
                         continue
                 elif choice == "2":
-                    amount = get_int()
+                    amount = get_int("tasks")
                     confirm = get_confirm()
                     if confirm:
                         if amount > emp["tasks"]:
@@ -251,7 +260,7 @@ def emp_edit():
                     else:
                         continue
                 elif choice == "3":
-                    amount = get_int()
+                    amount = get_int("tasks")
                     confirm = get_confirm()
                     if confirm:
                         emp["tasks"] = amount
@@ -292,8 +301,28 @@ def emp_list():
             print(f"{emp['ID']:<15}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
 
 def main():
-    pass
+    while True:
+        choice = input("\nSelect an option\n"
+                       "1. add employee\n"
+                       "2. delete employee\n"
+                       "3. change employee\n"
+                       "4. display employees\n"
+                       "e. exit\n"
+                       "").strip().lower()
 
+        if choice == "1":
+            emp_new()
+        elif choice == "2":
+            pass
+        elif choice == "3":
+            emp_edit()
+        elif choice == "4":
+            emp_list()
+        elif choice == "e":
+            break
+        else:
+            print("\nError: Invalid input.")
+            continue
 
 if __name__ == "__main__":
     main()
