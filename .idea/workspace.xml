@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="217ed036-0187-43d1-ada6-9d081c7502e4" name="Changes" comment="minor changes" />
+    <list default="true" id="217ed036-0187-43d1-ada6-9d081c7502e4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,13 +99,8 @@
       <workItem from="1786379022709" duration="4662000" />
       <workItem from="1786449867242" duration="8590000" />
       <workItem from="1786466461658" duration="293000" />
-    </task>
-    <task id="LOCAL−00027" summary="'def edit_emp()' added abbility to substract hours from an employee">
-      <option name="closed" value="true" />
-      <created>1786048502321</created>
-      <option name="number" value="LOCAL−00027" />
-      <option name="presentableId" value="LOCAL−00027" />
-      <updated>1786048502321</updated>
+      <workItem from="1786466792640" duration="633000" />
+      <workItem from="1786468044458" duration="58000" />
     </task>
     <task id="LOCAL−00028" summary="'def edit_emp()' did a bad decision and was fixing it, now program work as usual">
       <option name="closed" value="true" />
@@ -440,7 +438,14 @@
       <option name="presentableId" value="LOCAL−00075" />
       <updated>1786466629032</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL−00076" summary="minor changes">
+      <option name="closed" value="true" />
+      <created>1786466812885</created>
+      <option name="number" value="LOCAL−00076" />
+      <option name="presentableId" value="LOCAL−00076" />
+      <updated>1786466812886</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,6 +460,11 @@
     <option name="TAB_STATES">
       <map>
         <entry key="62e44634-c92b-46fd-819d-13bc85776e39">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
           <value>
             <State />
           </value>
