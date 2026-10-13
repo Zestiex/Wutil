@@ -14,7 +14,6 @@ employees = {}
 
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
-
 def emp_productivity():
     for emp_id in employees:
         print(f"\nID: {emp_id} | Name: {employees[emp_id]['name']}")
@@ -27,7 +26,6 @@ def emp_productivity():
         return None
 
     return employees[emp_id]["hours"] / employees[emp_id]["tasks"]
-
 def emp_details(emp_id):
     if emp_id not in employees:
         print("\nError: ID does not exist.")
@@ -39,7 +37,6 @@ def emp_details(emp_id):
           f"Role: {emp['role']}\n"
           f"Hours: {emp['hours']}\n"
           f"Tasks: {emp['tasks']}")
-
 def get_int(val):
     if val in ("hours", "h"):
         promt = "\nAmount of hours: "
@@ -58,7 +55,6 @@ def get_int(val):
                 return amount
         except ValueError:
             print("\nError: Invalid input.")
-
 def get_confirm():
     confirm = input("Confirm? (y/n): ").strip().lower()
     if confirm in ("y", "yes"):
@@ -70,14 +66,12 @@ def get_confirm():
     else:
         print("\nError: Invalid input.")
         return None
-
 def id_generator():
     min_val, max_val = 0, 999999999
     while True:
         emp_id = f"EMP-{random.randint(min_val, max_val)}"
         if emp_id not in employees:
             return emp_id
-
 def emp_new():
     emp_id = None
     while True:
@@ -134,7 +128,6 @@ def emp_new():
             break
         else:
             continue
-
 def emp_edit():
     for emp_id in employees:
         print(f"\nID: {emp_id} | Name: {employees[emp_id]['name']}")
@@ -347,10 +340,9 @@ def emp_edit():
         else:
             print("\nError: Invalid input.")
             continue
-
 def emp_delete(): #-- WIP
     pass
-
+"""
 def emp_list():
     if not employees:
         print("\nEmployees not found.")
@@ -360,7 +352,7 @@ def emp_list():
         for emp in employees.values():
             print(f"{emp['ID']:<15}{emp['name']:<15}{emp['role']:<15}{emp['hours']:<8}{emp['tasks']:<6}")
         input("\nPress enter to continue...")
-
+"""
 def main():
     while True:
         clear_console()
@@ -382,7 +374,7 @@ def main():
         elif choice == "4":
             pass
         elif choice == "5":
-            emp_list()
+            emp_list(employees)
         elif choice == "e":
             break
         else:
