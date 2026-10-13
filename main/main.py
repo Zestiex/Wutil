@@ -1,15 +1,14 @@
 import os
 import random
 
-from main.utility.clear_console import *
-from main.utility.get_confirm import *
-from main.utility.get_int import *
-from main.utility.id_generator import *
-
 from main.employes_handler.changing import *
 from main.employes_handler.creation import *
 from main.employes_handler.displayment import *
 from main.employes_handler.editing import *
+from main.utility.clear_console import *
+from main.utility.get_confirm import *
+from main.utility.get_int import *
+from main.utility.id_generator import *
 
 employees = {}
 
@@ -372,7 +371,7 @@ def main():
                        "4. display productivity WIP\n"
                        "5. Display employees\n"
                        "e. exit\n"
-                       "").strip().lower(
+                       "").strip().lower()
 
         if choice == "1":
             emp_new()
